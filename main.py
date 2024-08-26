@@ -205,7 +205,8 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	# 距离其他偏转角度最近的角度
 	anglevalue = closed_angle_of_result(result)
 	print(f'anglevalue = {anglevalue}')
-	
+	if anglevalue > 90:
+		anglevalue = 180 - anglevalue
 	vv = anglevalue if anglevalue < 0 else -anglevalue
 	# 顺时针旋转角度
 	# img = rotate_image_with_binary_data(io.BytesIO(binary_data), 360 - anglevalue)
