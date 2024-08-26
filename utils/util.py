@@ -127,18 +127,22 @@ def angle_of_longer_side_rectangle(rectangle_points):
 
 # 将图片旋转指定角度后生成新图片
 # image_path: 图片的保存路径
-# angle: 旋转的角度 - 顺时针为正
-def rotate_image(image_path, angle, expand=True):
+# angle: 旋转的角度 - 顺时针为正，负值时为逆时针旋转，正值时为顺时针旋转
+def rotate_image(image_path, angle):
   img = Image.open(image_path)
-  rotated_img = img.rotate(angle, expand=expand)
+  # 当expand=True时，旋转后的图像会扩展以适应整个旋转后的图像区域，这意味着图像的尺寸会根据旋转角度进行调整，以确保旋转后的图像不会被裁剪。
+  # 当expand=False（默认值）时，旋转后的图像尺寸与原始图像相同，可能会导致部分图像被裁剪。
+  rotated_img = img.rotate(angle, expand=True)
   return rotated_img
 
 
 # 将图片旋转指定角度后生成新图片
 # binary_data: 图片的保存路径
-# angle: 旋转的角度 - 顺时针为正
-def rotate_image_with_binary_data(binary_data, angle, expand=True):
+# angle: 旋转的角度 - 顺时针为正，负值时为逆时针旋转，正值时为顺时针旋转
+def rotate_image_with_binary_data(binary_data, angle):
   img = Image.open(binary_data)
-  print(f'expand = {expand}')
-  rotated_img = img.rotate(angle, expand=expand)
+  print(f'angle = {angle}')
+  # 当expand=True时，旋转后的图像会扩展以适应整个旋转后的图像区域，这意味着图像的尺寸会根据旋转角度进行调整，以确保旋转后的图像不会被裁剪。
+  # 当expand=False（默认值）时，旋转后的图像尺寸与原始图像相同，可能会导致部分图像被裁剪。
+  rotated_img = img.rotate(angle, expand=True)
   return rotated_img

@@ -205,9 +205,10 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	# 距离其他偏转角度最近的角度
 	anglevalue = closed_angle_of_result(result)
 	
+	vv = anglevalue if anglevalue > 0 else -anglevalue
 	# 顺时针旋转角度
 	# img = rotate_image_with_binary_data(io.BytesIO(binary_data), 360 - anglevalue)
-	img = rotate_image_with_binary_data(io.BytesIO(binary_data), anglevalue)
+	img = rotate_image_with_binary_data(io.BytesIO(binary_data), vv)
 	clockwise_name = os.path.splitext(filename)[0] + '_' + 'clockwise' + '.png'
 	clockwise_path = os.path.join(OCR_SAVE_DIRECTORY, clockwise_name)
 	print(f'new_path = {clockwise_path}')
@@ -220,7 +221,7 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 
 
 	# 逆时针旋转角度
-	img2 = rotate_image_with_binary_data(io.BytesIO(binary_data), anglevalue, False)
+	img2 = rotate_image_with_binary_data(io.BytesIO(binary_data), -vv)
 	anticlockwise_name = os.path.splitext(filename)[0] + '_' + 'anticlockwise' + '.png'
 	anticlockwise_path = os.path.join(OCR_SAVE_DIRECTORY, anticlockwise_name)
 	print(f'anticlockwise_path = {anticlockwise_path}')
