@@ -204,6 +204,21 @@ async def ocr_binary_data(file: UploadFile = File(...)):
     
 	# 距离其他偏转角度最近的角度
 	anglevalue = closed_angle_of_result(result)
+
+	# 角度 < 1 直接返回，不进行旋转
+	if abs(anglevalue) < 1:
+		final_result = {
+			"status": "200",
+			"result": {
+				"filename": filename,
+				"anglevalue": anglevalue,
+				"clockwise": 1,
+				"initial": result,
+				"rotated": {}
+			}
+		}		
+		return final_result
+
 	print(f'anglevalue = {anglevalue}')
 	if anglevalue > 90:
 		anglevalue = 180 - anglevalue
@@ -220,35 +235,48 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	image_bytes = byte_io.getvalue()
 	clockwise_result = ocr_image_from_bytes(image_bytes, True, 'ch')
 	# clockwise_result = ocr_image_with_path(clockwise_path, True, 'ch')
+	clockwise_anglevalue = closed_angle_of_result(clockwise_result)
+	# 顺时针旋转后，如果新的偏转角度 < 旧的偏转角度，则认为旋转成功，返回
+	if abs(clockwise_anglevalue) < abs(anglevalue):
+		final_result = {
+			"status": "200",
+			"result": {
+				"filename": filename,
+				"anglevalue": anglevalue,
+				"clockwise": 1,
+				"initial": result,
+				"rotated": clockwise_result
+			}
+		}		
+		return final_result
+	else:
+		# 逆时针旋转后将结果返回
+		# 逆时针旋转角度
+		img2 = rotate_image_with_binary_data(io.BytesIO(binary_data), -vv)
+		anticlockwise_name = os.path.splitext(filename)[0] + '_' + 'anticlockwise' + '.png'
+		anticlockwise_path = os.path.join(OCR_SAVE_DIRECTORY, anticlockwise_name)
+		print(f'anticlockwise_path = {anticlockwise_path}')
+		img2.save(anticlockwise_path, format='PNG')
+		byte_io2 = io.BytesIO()
+		img2.save(byte_io2, format='PNG')
+		image_bytes2 = byte_io2.getvalue()
+		anticlockwise_result = ocr_image_from_bytes(image_bytes2, True, 'ch')
+		# anticlockwise_result = ocr_image_with_path(anticlockwise_path, True, 'ch')	
 
-
-	# 逆时针旋转角度
-	img2 = rotate_image_with_binary_data(io.BytesIO(binary_data), -vv)
-	anticlockwise_name = os.path.splitext(filename)[0] + '_' + 'anticlockwise' + '.png'
-	anticlockwise_path = os.path.join(OCR_SAVE_DIRECTORY, anticlockwise_name)
-	print(f'anticlockwise_path = {anticlockwise_path}')
-	img2.save(anticlockwise_path, format='PNG')
-	byte_io2 = io.BytesIO()
-	img2.save(byte_io2, format='PNG')
-	image_bytes2 = byte_io2.getvalue()
-	anticlockwise_result = ocr_image_from_bytes(image_bytes2, True, 'ch')
-	# anticlockwise_result = ocr_image_with_path(anticlockwise_path, True, 'ch')	
-
-	final_result = {
-		"status": "200",
-		"result": {
-			"filename": filename,
-			"anglevalue": anglevalue,
-			'initial': result,
-			'clockwise': clockwise_result,
-			'anticlockwise': anticlockwise_result
+		final_result = {
+			"status": "200",
+			"result": {
+				"filename": filename,
+				"anglevalue": anglevalue,
+				"clockwise": 0,
+				"initial": result,
+				"rotated": anticlockwise_result
+			}
 		}
-	}
+		return final_result 
 
 	# json_result = json.dumps(final_result)
 	# print(f"json_result = {json_result}")
-
-	return final_result
 
 # 设置Uvicorn服务器的运行
 if __name__ == "__main__":
