@@ -206,27 +206,29 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	anglevalue = closed_angle_of_result(result)
 	
 	# 顺时针旋转角度
-	# img = rotate_image_with_binary_data(io.BytesIO(binary_data), 360 - anglevalue)
-	# clockwise_name = os.path.splitext(filename)[0] + '_' + 'clockwise' + '.png'
-	# clockwise_path = os.path.join(OCR_SAVE_DIRECTORY, clockwise_name)
-	# print(f'new_path = {clockwise_path}')
-	# img.save(clockwise_path, format='PNG')
-	# byte_io = io.BytesIO()
-	# img.save(byte_io, format='PNG')
-	# image_bytes = byte_io.getvalue()
+	img = rotate_image_with_binary_data(io.BytesIO(binary_data), 360 - anglevalue)
+	clockwise_name = os.path.splitext(filename)[0] + '_' + 'clockwise' + '.png'
+	clockwise_path = os.path.join(OCR_SAVE_DIRECTORY, clockwise_name)
+	print(f'new_path = {clockwise_path}')
+	img.save(clockwise_path, format='PNG')
+	byte_io = io.BytesIO()
+	img.save(byte_io, format='PNG')
+	image_bytes = byte_io.getvalue()
 	# clockwise_result = ocr_image_from_bytes(image_bytes, True, 'ch')
+	clockwise_result = ocr_image_with_path(clockwise_path, True, 'ch')
 
 
 	# 逆时针旋转角度
-	# img2 = rotate_image_with_binary_data(io.BytesIO(binary_data), anglevalue)
-	# anticlockwise_name = os.path.splitext(filename)[0] + '_' + 'anticlockwise' + '.png'
-	# anticlockwise_path = os.path.join(OCR_SAVE_DIRECTORY, anticlockwise_name)
-	# print(f'anticlockwise_path = {anticlockwise_path}')
-	# img2.save(anticlockwise_path, format='PNG')
-	# byte_io2 = io.BytesIO()
-	# img2.save(byte_io2, format='PNG')
-	# image_bytes2 = byte_io2.getvalue()
+	img2 = rotate_image_with_binary_data(io.BytesIO(binary_data), anglevalue)
+	anticlockwise_name = os.path.splitext(filename)[0] + '_' + 'anticlockwise' + '.png'
+	anticlockwise_path = os.path.join(OCR_SAVE_DIRECTORY, anticlockwise_name)
+	print(f'anticlockwise_path = {anticlockwise_path}')
+	img2.save(anticlockwise_path, format='PNG')
+	byte_io2 = io.BytesIO()
+	img2.save(byte_io2, format='PNG')
+	image_bytes2 = byte_io2.getvalue()
 	# anticlockwise_result = ocr_image_from_bytes(image_bytes2, True, 'ch')
+	anticlockwise_result = ocr_image_with_path(anticlockwise_path, True, 'ch')	
 
 	final_result = {
 		"status": "200",
@@ -234,8 +236,8 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 			"filename": filename,
 			"anglevalue": anglevalue,
 			'initial': result,
-			# 'clockwise': clockwise_result,
-			# 'anticlockwise': anticlockwise_result
+			'clockwise': clockwise_result,
+			'anticlockwise': anticlockwise_result
 		}
 	}
 
