@@ -130,7 +130,7 @@ def angle_of_longer_side_rectangle(rectangle_points):
 # angle: 旋转的角度 - 顺时针为正
 def rotate_image(image_path, angle, expand=True):
   img = Image.open(image_path)
-  rotated_img = img.rotate(angle, expand)
+  rotated_img = img.rotate(angle, expand=expand)
   return rotated_img
 
 
@@ -139,5 +139,5 @@ def rotate_image(image_path, angle, expand=True):
 # angle: 旋转的角度 - 顺时针为正
 def rotate_image_with_binary_data(binary_data, angle, expand=True):
   img = Image.open(binary_data)
-  rotated_img = img.rotate(angle, expand)
+  rotated_img = img.rotate(angle, expand=expand)
   return rotated_img
