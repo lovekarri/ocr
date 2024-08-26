@@ -128,16 +128,16 @@ def angle_of_longer_side_rectangle(rectangle_points):
 # 将图片旋转指定角度后生成新图片
 # image_path: 图片的保存路径
 # angle: 旋转的角度 - 顺时针为正
-def rotate_image(image_path, angle):
+def rotate_image(image_path, angle, expand=True):
   img = Image.open(image_path)
-  rotated_img = img.rotate(angle, expand=True)
+  rotated_img = img.rotate(angle, expand)
   return rotated_img
 
 
 # 将图片旋转指定角度后生成新图片
 # binary_data: 图片的保存路径
 # angle: 旋转的角度 - 顺时针为正
-def rotate_image_with_binary_data(binary_data, angle):
+def rotate_image_with_binary_data(binary_data, angle, expand=True):
   img = Image.open(binary_data)
-  rotated_img = img.rotate(angle, expand=True)
+  rotated_img = img.rotate(angle, expand)
   return rotated_img
