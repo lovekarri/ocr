@@ -22,7 +22,7 @@ def angle_between_two_points(x1, y1, x2, y2):
 
     # 由于坐标零点在图片左上角，angle与坐标零点在图片左下角正相反
     # 可以考虑将坐标系翻转到左下角，angle直接取反
-    # angle  = 0 - angle
+    angle  = 0 - angle
 
     if angle < 0:
         angle += 180
