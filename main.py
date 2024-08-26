@@ -206,7 +206,7 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	anglevalue = closed_angle_of_result(result)
 	print(f'anglevalue = {anglevalue}')
 	
-	vv = anglevalue if anglevalue > 0 else -anglevalue
+	vv = anglevalue if anglevalue < 0 else -anglevalue
 	# 顺时针旋转角度
 	# img = rotate_image_with_binary_data(io.BytesIO(binary_data), 360 - anglevalue)
 	img = rotate_image_with_binary_data(io.BytesIO(binary_data), vv)
