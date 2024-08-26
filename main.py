@@ -199,8 +199,8 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 		f.write(binary_data)
 
 	# 识别图片
-	# result = ocr_image_from_bytes(binary_data, True, "ch")
-	result = ocr_image_with_path(file_path, True, 'ch')
+	result = ocr_image_from_bytes(binary_data, True, "ch")
+	# result = ocr_image_with_path(file_path, True, 'ch')
     
 	# 距离其他偏转角度最近的角度
 	anglevalue = closed_angle_of_result(result)
@@ -214,8 +214,8 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	byte_io = io.BytesIO()
 	img.save(byte_io, format='PNG')
 	image_bytes = byte_io.getvalue()
-	# clockwise_result = ocr_image_from_bytes(image_bytes, True, 'ch')
-	clockwise_result = ocr_image_with_path(clockwise_path, True, 'ch')
+	clockwise_result = ocr_image_from_bytes(image_bytes, True, 'ch')
+	# clockwise_result = ocr_image_with_path(clockwise_path, True, 'ch')
 
 
 	# 逆时针旋转角度
@@ -227,8 +227,8 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	byte_io2 = io.BytesIO()
 	img2.save(byte_io2, format='PNG')
 	image_bytes2 = byte_io2.getvalue()
-	# anticlockwise_result = ocr_image_from_bytes(image_bytes2, True, 'ch')
-	anticlockwise_result = ocr_image_with_path(anticlockwise_path, True, 'ch')	
+	anticlockwise_result = ocr_image_from_bytes(image_bytes2, True, 'ch')
+	# anticlockwise_result = ocr_image_with_path(anticlockwise_path, True, 'ch')	
 
 	final_result = {
 		"status": "200",

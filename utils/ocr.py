@@ -47,6 +47,8 @@ def ocr_image_from_bytes(image_bytes, use_angle_cls=True, lang="ch"):
 	# img_data = base64.b16encode(image_bytes).decode('utf-8')
 	# img_base64 = f"data:image/jpeg;base64,{img_data}"
 	temp_image = Image.open(io.BytesIO(image_bytes))
+	if temp_image.mode == 'RGBA':
+		temp_image = temp_image.convert('RGB')
 	# temp_image = image_bytes
 
 	ocr = PaddleOCR(use_angle_cls=use_angle_cls, lang=lang)
