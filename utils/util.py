@@ -173,4 +173,5 @@ def draw_red_dot_and_label_with_image(img, result):
 # result: ocr识别出的文字信息
 def draw_red_dot_and_label_with_binary_data(binary_data, result):
     img = Image.open(binary_data) 
-    return draw_red_dot_and_label_with_image(img, result)
+    img2 = draw_red_dot_and_label_with_image(img, result)
+    return img2
