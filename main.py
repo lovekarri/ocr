@@ -201,7 +201,7 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	# 识别图片
 	result = ocr_image_from_bytes(binary_data, True, "ch")
 	# 在图片上标注识别出的坐标信息
-	original_img = draw_red_dot_and_label_with_binary_data(binary_data , result)
+	original_img = draw_red_dot_and_label_with_binary_data(io.BytesIO(binary_data) , result)
 	# 将图片保存到指定目录
 	original_img.save(file_path, format='PNG')
     
