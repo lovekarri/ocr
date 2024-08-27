@@ -221,9 +221,9 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 
 	# 图片旋转方法rotate_image_with_binary_data的参数vv为正值，将图片顺时针旋转；vv为负值，将图片逆时针旋转
 	# 如果anglevalue > 0，需要逆时针旋转，如果anglevalue < 0，需要顺时针旋转
-	vv = -anglevalue
+	vv = anglevalue
 	img = rotate_image_with_binary_data(io.BytesIO(binary_data), vv)
-	if anglevalue > 0:
+	if anglevalue < 0:
 		rotated = 'clockwise'
 		clockwise = 1
 	else:
