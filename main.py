@@ -168,9 +168,21 @@ async def upload_binary_data(file: UploadFile = File(...)):
 
 	# 检查命令是否成功执行
 	if result.returncode == 0:
-		return {"status": "success", "filename": filename, "logs": results}
+		return {
+			"status": 200,
+			"result": {
+				"filename": filename,
+				"detections": results
+			}
+		}
 	else:
-		return {"status": "error", "error": stderr}
+		return {
+			"status": 0,
+			"result": {
+				"filename": filename,
+				"error": stderr
+			}
+		}
 
 
 
