@@ -4,7 +4,7 @@ import io
 import subprocess
 import re
 from utils.ocr import ocr_image_from_bytes, ocr_image_with_path
-from utils.util import rotate_image_with_binary_data, closed_angle_of_result
+from utils.util import rotate_image_with_binary_data, closed_angle_of_result, draw_red_dot_and_label_with_binary_data, draw_red_dot_and_label_with_image
 
 
 app = FastAPI()
@@ -195,12 +195,15 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	memory_files[filename] = binary_data
 
 	# 将上传的文件保存到指定目录
-	with open(file_path, "wb") as f:
-		f.write(binary_data)
+	# with open(file_path, "wb") as f:
+		# f.write(binary_data)
 
 	# 识别图片
 	result = ocr_image_from_bytes(binary_data, True, "ch")
-	# result = ocr_image_with_path(file_path, True, 'ch')
+	# 在图片上标注识别出的坐标信息
+	original_img = draw_red_dot_and_label_with_binary_data(binary_data , result)
+	# 将图片保存到指定目录
+	original_img.save(file_path, format='PNG')
     
 	# 距离其他偏转角度最近的角度
 	anglevalue = closed_angle_of_result(result)
@@ -232,11 +235,13 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	rotated_file_name = os.path.splitext(filename)[0] + '_' + rotated + '.png'
 	rotated_file_path = os.path.join(OCR_SAVE_DIRECTORY, rotated_file_name)
 	print(f'rotated_file_path = {rotated_file_path}')
-	img.save(rotated_file_path, format='PNG')
+	# img.save(rotated_file_path, format='PNG')
 	byte_io = io.BytesIO()
 	img.save(byte_io, format='PNG')
 	image_bytes = byte_io.getvalue()
 	rotated_result = ocr_image_from_bytes(image_bytes, False, 'ch')
+	rotated_image = draw_red_dot_and_label_with_image(img, rotated_result)
+	rotated_image.save(rotated_file_path, format='PNG')
 	final_result = {
 		'status': 200,
 		'result': {

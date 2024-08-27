@@ -1,5 +1,5 @@
 import math
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 # 计算两个点之间连线与水平线的夹角（该连线顺时针旋转后与水平方向平行的角度）
 # x1: 第一个点的x坐标
@@ -132,7 +132,7 @@ def rotate_image(image_path, angle):
 
 
 # 将图片旋转指定角度后生成新图片
-# binary_data: 图片的保存路径
+# binary_data: 图片的二进制字节串
 # angle: 旋转的角度 - 顺时针为正，负值时为逆时针旋转，正值时为顺时针旋转
 def rotate_image_with_binary_data(binary_data, angle):
   img = Image.open(binary_data)
@@ -141,3 +141,37 @@ def rotate_image_with_binary_data(binary_data, angle):
   # 当expand=False（默认值）时，旋转后的图像尺寸与原始图像相同，可能会导致部分图像被裁剪。
   rotated_img = img.rotate(angle, expand=True)
   return rotated_img
+
+
+# 在图片上把红点画出来并将坐标位置写在旁边
+# img: 图片
+# result: ocr识别出的文字信息
+def draw_red_dot_and_label_with_image(img, result):
+    draw = ImageDraw.Draw(img)
+
+    for item in result:
+        point_list = item[0]
+        for point in point_list:
+            x = point[0]
+            y = point[1]
+            # 画红点
+            dot_size = 5
+            draw.ellipse((x - dot_size, y - dot_size, x + dot_size, y + dot_size), fill='red')
+
+            # 加载字体
+            font = ImageFont.load_default()
+
+            # 绘制坐标文本
+            text = f'({x}, {y})'
+            text_width, text_height = draw.textsize(text, font=font)
+            draw.text((x + dot_size + 5, y - text_height // 2), text, font=font, fill='black')
+
+    return img
+
+
+# 在图片上把红点画出来并将坐标位置写在旁边
+# binary_data: 图片的二进制字节串
+# result: ocr识别出的文字信息
+def draw_red_dot_and_label_with_binary_data(binary_data, result):
+    img = Image.open(binary_data) 
+    return draw_red_dot_and_label_with_image(img, result)
