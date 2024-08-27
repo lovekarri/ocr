@@ -149,7 +149,7 @@ def draw_red_dot_and_label_with_image(img, result):
     draw = ImageDraw.Draw(img)
 
     for item in result:
-        point_list = item[0]
+        point_list = item.get('box')
         for point in point_list:
             x = point[0]
             y = point[1]
