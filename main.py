@@ -200,6 +200,18 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 
 	# 识别图片
 	result = ocr_image_from_bytes(binary_data, True, "ch")
+	if len(result) == 0:
+		final_result = {
+			"status": "200",
+			"result": {
+				"filename": filename,
+				"anglevalue": 0,
+				"clockwise": 1,
+				"initial": result,
+				"rotated": []
+			}
+		}
+		return final_result
 	# 在图片上标注识别出的坐标信息
 	original_img = draw_red_dot_and_label_with_binary_data(io.BytesIO(binary_data) , result)
 	# 将图片保存到指定目录
@@ -217,7 +229,7 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 				"anglevalue": anglevalue,
 				"clockwise": 1,
 				"initial": result,
-				"rotated": {}
+				"rotated": []
 			}
 		}		
 		return final_result
