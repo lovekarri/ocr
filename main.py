@@ -219,64 +219,41 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 		}		
 		return final_result
 
-	print(f'anglevalue = {anglevalue}')
-	if anglevalue > 90:
-		anglevalue = 180 - anglevalue
-	vv = anglevalue if anglevalue < 0 else -anglevalue
-	# 顺时针旋转角度
-	# img = rotate_image_with_binary_data(io.BytesIO(binary_data), 360 - anglevalue)
+	# 图片旋转方法rotate_image_with_binary_data的参数vv为正值，将图片顺时针旋转；vv为负值，将图片逆时针旋转
+	# 如果anglevalue > 0，需要逆时针旋转，如果anglevalue < 0，需要顺时针旋转
+	vv = -anglevalue
 	img = rotate_image_with_binary_data(io.BytesIO(binary_data), vv)
-	clockwise_name = os.path.splitext(filename)[0] + '_' + 'clockwise' + '.png'
-	clockwise_path = os.path.join(OCR_SAVE_DIRECTORY, clockwise_name)
-	print(f'new_path = {clockwise_path}')
-	img.save(clockwise_path, format='PNG')
+	if anglevalue > 0:
+		rotated = 'clockwise'
+		clockwise = 1
+	else:
+		rotated = 'anticlockwise'
+		clockwise = 0
+	rotated_file_name = os.path.splitext(filename)[0] + '_' + rotated + '.png'
+	rotated_file_path = os.path.join(OCR_SAVE_DIRECTORY, rotated_file_name)
+	print(f'rotated_file_path = {rotated_file_path}')
+	img.save(rotated_file_path, format='PNG')
 	byte_io = io.BytesIO()
 	img.save(byte_io, format='PNG')
 	image_bytes = byte_io.getvalue()
-	clockwise_result = ocr_image_from_bytes(image_bytes, True, 'ch')
-	# clockwise_result = ocr_image_with_path(clockwise_path, True, 'ch')
-	clockwise_anglevalue = closed_angle_of_result(clockwise_result)
-	# 顺时针旋转后，如果新的偏转角度 < 旧的偏转角度，则认为旋转成功，返回
-	if abs(clockwise_anglevalue) < abs(anglevalue):
-		final_result = {
-			"status": "200",
-			"result": {
-				"filename": filename,
-				"anglevalue": anglevalue,
-				"clockwise": 1,
-				"initial": result,
-				"rotated": clockwise_result
-			}
-		}		
-		return final_result
-	else:
-		# 逆时针旋转后将结果返回
-		# 逆时针旋转角度
-		img2 = rotate_image_with_binary_data(io.BytesIO(binary_data), -vv)
-		anticlockwise_name = os.path.splitext(filename)[0] + '_' + 'anticlockwise' + '.png'
-		anticlockwise_path = os.path.join(OCR_SAVE_DIRECTORY, anticlockwise_name)
-		print(f'anticlockwise_path = {anticlockwise_path}')
-		img2.save(anticlockwise_path, format='PNG')
-		byte_io2 = io.BytesIO()
-		img2.save(byte_io2, format='PNG')
-		image_bytes2 = byte_io2.getvalue()
-		anticlockwise_result = ocr_image_from_bytes(image_bytes2, True, 'ch')
-		# anticlockwise_result = ocr_image_with_path(anticlockwise_path, True, 'ch')	
-
-		final_result = {
-			"status": "200",
-			"result": {
-				"filename": filename,
-				"anglevalue": anglevalue,
-				"clockwise": 0,
-				"initial": result,
-				"rotated": anticlockwise_result
-			}
+	rotated_result = ocr_image_from_bytes(image_bytes, False, 'ch')
+	final_result = {
+		'status': 200,
+		'result': {
+			'filename': filename,
+			'anglevalue': anglevalue,
+			'clockwise': clockwise,
+			'initial':result,
+			'rotated': rotated_result
 		}
-		return final_result 
+	}
 
-	# json_result = json.dumps(final_result)
-	# print(f"json_result = {json_result}")
+	# 虽然此处直接返回了，还可以向后延伸
+	# rotated_result是旋转后再次识别的结果，本次识别未开启文字方向识别器。
+	# 如果识别效果很差，则将其旋转180°后应该方向正确
+	# 此时关闭文字方向识别器再次识别文字，识别结果与第一次相近或者更好
+	return final_result
+
 
 # 设置Uvicorn服务器的运行
 if __name__ == "__main__":

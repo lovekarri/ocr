@@ -12,7 +12,7 @@ def angle_between_two_points(x1, y1, x2, y2):
     if x2 == x1:
         slope = None
     else:
-        slope = (y1 - y2) / (x2 - x1)
+        slope = (y2 - y1) / (x2 - x1)
 
     # 计算倾角（角度制）
     if slope is None:
@@ -23,9 +23,7 @@ def angle_between_two_points(x1, y1, x2, y2):
     # 由于坐标零点在图片左上角，angle与坐标零点在图片左下角正相反
     # 可以考虑将坐标系翻转到左下角，angle直接取反
     # angle  = 0 - angle
-
-    if angle < 0:
-        angle += 180
+    print(f'tan → angle: {slope} → {angle}')
   
     return angle
 
@@ -119,10 +117,7 @@ def angle_of_longer_side_rectangle(rectangle_points):
     x1, y1 = longer_side_points[0]
     x2, y2 = longer_side_points[1]
 
-    if x1 < x2:
-        return angle_between_two_points(x1, y1, x2, y2)
-    else:
-        return angle_between_two_points(x2, y2, x1, y1)
+    return angle_between_two_points(x1, y1, x2, y2)
 
 
 # 将图片旋转指定角度后生成新图片
