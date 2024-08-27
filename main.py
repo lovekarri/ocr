@@ -201,6 +201,10 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	# 识别图片
 	result = ocr_image_from_bytes(binary_data, True, "ch")
 	if len(result) == 0:
+		# 将图片保存
+		with open(file_path, "wb") as f:
+			f.write(binary_data)
+		# 返回结果
 		final_result = {
 			"status": "200",
 			"result": {
