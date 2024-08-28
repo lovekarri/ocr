@@ -1,7 +1,7 @@
 import os
 import io
 from utils.ocr import ocr_image_from_bytes
-from utils.util import rotate_image_with_binary_data, closed_angle_of_result, draw_red_dot_and_label_with_binary_data
+from utils.util import rotate_image_with_binary_data, closed_angle_of_result, draw_red_dot_and_label_with_binary_data, draw_red_dot_and_label_with_image
 
 OCR_SAVE_DIRECTORY = "/paddle/images/ocr"
 
@@ -75,7 +75,7 @@ def ocr_result_after_rotate_with_image_bytes(binary_data, file_path, vv):
     img.save(byte_io, format='PNG')
     image_bytes = byte_io.getvalue()
     result = ocr_image_from_bytes(image_bytes, False, 'ch')
-    rotated_image = draw_red_dot_and_label_with_binary_data(image_bytes, result)
+    rotated_image = draw_red_dot_and_label_with_image(img, result)
     rotated_image.save(file_path, format='PNG')
     
     return result
