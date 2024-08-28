@@ -1,5 +1,6 @@
 import os
 import io
+from PIL import Image
 from utils.ocr import ocr_image_from_bytes
 from utils.util import rotate_image_with_binary_data, closed_angle_of_result, draw_red_dot_and_label_with_binary_data, draw_red_dot_and_label_with_image
 
@@ -33,8 +34,7 @@ def final_result(code, file_name, angle_value, clock_wise, original_result, rota
 
 def draw_and_save_image(image_bytes, result, file_path):
     if len(result) == 0:
-        with open(file_path, 'wb') as f:
-            f.write(image_bytes)
+        Image.open(image_bytes).save(file_path)
     else:
         # 在图片上标注识别出的坐标信息
         original_img = draw_red_dot_and_label_with_binary_data(image_bytes , result)
