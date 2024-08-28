@@ -1,6 +1,6 @@
 import os
 import io
-from utils.ocr2 import ocr_image_from_bytes
+from utils.ocr import ocr_image_from_bytes
 from utils.util import rotate_image_with_binary_data, closed_angle_of_result, draw_red_dot_and_label_with_binary_data, draw_red_dot_and_label_with_image
 
 OCR_SAVE_DIRECTORY = "/paddle/images/ocr"
