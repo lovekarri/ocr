@@ -37,7 +37,7 @@ def draw_and_save_image(image_bytes, result, file_path):
             f.write(image_bytes)
     else:
         # 在图片上标注识别出的坐标信息
-        original_img = draw_red_dot_and_label_with_binary_data(io.BytesIO(image_bytes) , result)
+        original_img = draw_red_dot_and_label_with_binary_data(image_bytes , result)
         # 将图片保存到指定目录
         original_img.save(file_path, format='PNG')
 
