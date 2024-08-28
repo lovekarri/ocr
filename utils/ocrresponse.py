@@ -196,3 +196,8 @@ def is_between(v, start, end, include_equal=True):
     if include_equal:
         return v <= max(start, end) and v >= min(start, end)
     return v < max(start, end) and v > min(start, end)
+
+
+if __name__ == '__main__':
+    import doctest
+    print(doctest.testmod(verbose=False, report=False))
