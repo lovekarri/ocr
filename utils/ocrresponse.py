@@ -50,12 +50,12 @@ def clockwise_with_anglevalue(anglevalue):
         return 0
 
 
-def rotated_file_path_with_anglevalue(anglevalue, file_name):
-    if anglevalue < 0:
-        rotated = 'clockwise'
-    else:
-        rotated = 'anticlockwise'
-    rotated_file_name = os.path.splitext(file_name)[0] + '_' + rotated + '.png'
+def rotated_file_path_with_anglevalue(file_name):
+    # if anglevalue < 0:
+    #     rotated = 'clockwise'
+    # else:
+    #     rotated = 'anticlockwise'
+    rotated_file_name = os.path.splitext(file_name)[0] + '_rotated.png'
     path = os.path.join(OCR_SAVE_DIRECTORY, rotated_file_name) 
     print(f'rotated_file_path = {path}')
     return path
@@ -87,7 +87,7 @@ def response_data_with_binary_data(binary_data, file_name):
     
     if len(result) == 0:
         # 返回结果
-        return final_result(200, file_name, 0, 1, result, [])
+        return final_result(200, file_name, -1, -1, result, [])
     else:
     
         # 距离其他偏转角度最近的角度
@@ -95,17 +95,17 @@ def response_data_with_binary_data(binary_data, file_name):
 
         # 角度 < 1 直接返回，不进行旋转
         if abs(anglevalue) < 1:
-            return final_result(200, file_name, anglevalue, 1, result, [])
+            return final_result(200, file_name, anglevalue, -1, result, [])
 
         # 图片旋转方法rotate_image_with_binary_data的参数vv为负值，将图片顺时针旋转；vv为正值，将图片逆时针旋转
         vv = anglevalue
         if anglevalue < 0:
             vv =  anglevalue + 360
-        clockwise = clockwise_with_anglevalue(vv)
-        rotated_result = ocr_result_after_rotate_with_image_bytes(binary_data, rotated_file_path_with_anglevalue(anglevalue, file_name), vv)
+        # clockwise = clockwise_with_anglevalue(vv)
+        rotated_result = ocr_result_after_rotate_with_image_bytes(binary_data, rotated_file_path_with_anglevalue(file_name), vv)
 
         # 虽然此处直接返回了，还可以向后延伸
         # rotated_result是旋转后再次识别的结果，本次识别未开启文字方向识别器。
         # 如果识别效果很差，则将其旋转180°后应该方向正确
         # 此时关闭文字方向识别器再次识别文字，识别结果与第一次相近或者更好
-        return final_result(200, file_name, anglevalue, clockwise, result, rotated_result)
+        return final_result(200, file_name, vv, -1, result, rotated_result)
