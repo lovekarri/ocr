@@ -10,7 +10,7 @@ from .util import angle_of_longer_side_rectangle
 
 def list_with_result(result):
     result_list = []
-    # print(f"result = {result}")
+    print(f"result = {result}")
     if len(result) > 0:
         for item in result:
             box = item[0]
