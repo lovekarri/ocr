@@ -10,7 +10,7 @@ from .util import angle_of_longer_side_rectangle
 
 def list_with_result(result):
     result_list = []
-    print(f"result = {result}")
+    # print(f"result = {result}")
     if len(result) > 0:
         for item in result:
             box = item[0]
@@ -76,7 +76,9 @@ def result_from_ocr_with_bytes(image_bytes, use_angle_cls=True, lang='ch'):
     # temp_image = image_bytes
 
     ocr = PaddleOCR(use_angle_cls=use_angle_cls, lang=lang)
-    return ocr.ocr(np.array(temp_image), use_angle_cls, lang)    
+    result = ocr.ocr(np.array(temp_image), use_angle_cls, lang)    
+    print(f'result = {result}')
+    return result
 
 
 # ocr识别图片上的文字，输入为图片二进制字节流
