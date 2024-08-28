@@ -19,6 +19,13 @@ def load_img_with_name(image_name):
         return f.read()
 
 
+
+#
+# filename: 原始文件名
+# anglevalue: 旋转的角度，如果为-1则为该图片未识别成功，未旋转
+# clockwise: 1为顺时针旋转，-1为逆时针旋转
+# original: 原图ocr识别结果
+# rotated: 原图旋转anglevalue角度后重新ocr识别的结果
 def final_result(code, file_name, angle_value, clock_wise, original_result, rotated_result):
     return {
         'status': code,
