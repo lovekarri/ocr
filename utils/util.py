@@ -7,8 +7,15 @@ from PIL import Image, ImageDraw, ImageFont
 # x2: 第二个点的x坐标
 # y2: 第二个点的y坐标
 def angle_between_two_points(x1, y1, x2, y2):
-    print(f'(x1, y1) = ({x1}, {y1}), (x2,y2) = ({x2}, {y2})')
-    print(f"y2-y1 = {y2 - y1}, x2-x1 = {x2 - x1}")
+    # print(f'(x1, y1) = ({x1}, {y1}), (x2,y2) = ({x2}, {y2})')
+    # print(f"y2-y1 = {y2 - y1}, x2-x1 = {x2 - x1}")
+    '''
+    计算两个点之间连线与水平线的夹角
+    >>> angle_between_two_points(1439.0, 1105.0, 1480.0, 1105.0)
+    0.0
+    >>> angle_between_two_points(1533.0, 1107.0, 1604.0, 1107.0)
+    0.0
+    '''
     if x2 == x1:
         slope = None
     else:
@@ -20,7 +27,7 @@ def angle_between_two_points(x1, y1, x2, y2):
     else:
         angle = math.degrees(math.atan(slope))
 
-    print(f'tan → angle: {slope} → {angle}')
+    # print(f'tan → angle: {slope} → {angle}')
 
     # 由于坐标零点在图片左上角，angle与坐标零点在图片左下角正相反
     # 可以考虑将坐标系翻转到左下角，angle直接取反
@@ -76,11 +83,13 @@ def closed_angle_of_result(result):
     #     print(f'数据类型错误：{e}')    
     #     return None
 
-
-# 计算已知矩形4个顶点坐标时其长边与水平线夹角
-# rectangle_points: 数组，限制长度为4个元素，每个元素为矩形的1个顶点坐标 
-def angle_of_longer_side_rectangle(rectangle_points):
-    print(f'rectangle_points = {rectangle_points}, len = {len(rectangle_points)}')
+# 获取矩形长边两个点的坐标
+def long_side_points_of_rectangle_points(rectangle_points):
+    '''
+    获取矩形长边两个点的坐标 
+    >>> long_side_points_of_rectangle_points([[1439.0,1105.0],[1480.0,1105.0],[1480.0,1123.0],[1439.0,1123.0]])
+    (1439.0, 1105.0, 1480.0, 1105.0)
+    '''
     assert isinstance(rectangle_points, list), "函数入参应该是数组"
     assert len(rectangle_points) == 4, "函数入参数组长度应为4"
     for point in rectangle_points:
@@ -117,8 +126,35 @@ def angle_of_longer_side_rectangle(rectangle_points):
 
     x1, y1 = longer_side_points[0]
     x2, y2 = longer_side_points[1]
+    
+    return x1, y1, x2, y2
+
+
+
+# 计算已知矩形4个顶点坐标时其长边与水平线夹角
+# rectangle_points: 数组，限制长度为4个元素，每个元素为矩形的1个顶点坐标 
+def angle_of_longer_side_rectangle(rectangle_points):
+    # print(f'rectangle_points = {rectangle_points}, len = {len(rectangle_points)}')
+    '''
+    计算已知矩形4个顶点坐标时其长边与水平线夹角
+    >>> angle_of_longer_side_rectangle([[1439.0,1105.0],[1480.0,1105.0],[1480.0,1123.0],[1439.0,1123.0]])
+    0.0
+    >>> angle_of_longer_side_rectangle([[541.0,1348.0],[601.0,1335.0],[608.0,1367.0],[548.0,1380.0]])
+    -12.225122675735753
+    >>> angle_of_longer_side_rectangle([[995.0,1219.0],[1051.0,1212.0],[1056.0,1248.0],[999.0,1255.0]])
+    -7.001267557495338
+    '''
+    (x1, y1, x2, y2) = long_side_points_of_rectangle_points(rectangle_points)
 
     return angle_between_two_points(x1, y1, x2, y2)
+
+
+# def aaa(erct):
+#     x1 =1
+#     x2 = 3
+#     y1 = 2
+#     y2 =4
+#     return x1, y1, x2, y2
 
 
 # 将图片旋转指定角度后生成新图片
@@ -176,3 +212,8 @@ def draw_red_dot_and_label_with_binary_data(binary_data, result):
     img = Image.open(binary_data) 
     img2 = draw_red_dot_and_label_with_image(img, result)
     return img2
+
+
+if __name__ == '__main__':
+    import doctest
+    print(doctest.testmod(verbose=False, report=False))
