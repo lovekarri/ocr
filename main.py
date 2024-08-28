@@ -3,8 +3,6 @@ import os
 import io
 import subprocess
 import re
-from utils.ocr import ocr_image_from_bytes, ocr_image_with_path
-from utils.util import rotate_image_with_binary_data, closed_angle_of_result, draw_red_dot_and_label_with_binary_data, draw_red_dot_and_label_with_image
 from utils.ocrresponse import response_data_with_binary_data
 
 
