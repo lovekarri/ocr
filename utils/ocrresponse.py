@@ -99,8 +99,8 @@ def response_data_with_binary_data(binary_data, file_name):
 
         # 图片旋转方法rotate_image_with_binary_data的参数vv为负值，将图片顺时针旋转；vv为正值，将图片逆时针旋转
         vv = anglevalue
-        if anglevalue > 0:
-            vv = 360 - anglevalue
+        if anglevalue < 0:
+            vv =  anglevalue + 360
         clockwise = clockwise_with_anglevalue(vv)
         rotated_result = ocr_result_after_rotate_with_image_bytes(binary_data, rotated_file_path_with_anglevalue(anglevalue, file_name), vv)
 
