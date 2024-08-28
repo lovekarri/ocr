@@ -61,8 +61,8 @@ def rotated_file_path_with_anglevalue(anglevalue, file_name):
     return path
 
 
-def ocr_result_with_image_bytes(binary_data, file_name, cls):
-    result = ocr_image_from_bytes(binary_data, cls, 'ch')
+def ocr_result_with_image_bytes(binary_data, file_name):
+    result = ocr_image_from_bytes(binary_data, True, 'ch')
     file_path = os.path.join(OCR_SAVE_DIRECTORY, file_name)
     draw_and_save_image(io.BytesIO(binary_data), result, file_path)
     return result
@@ -83,7 +83,7 @@ def ocr_result_after_rotate_with_image_bytes(binary_data, file_path, vv):
 
 def response_data_with_binary_data(binary_data, file_name):
     
-    result = ocr_result_with_image_bytes(binary_data, True, "ch")
+    result = ocr_result_with_image_bytes(binary_data, file_name)
     
     if len(result) == 0:
         # 返回结果
