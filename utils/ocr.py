@@ -13,6 +13,8 @@ def list_with_result(result):
     # print(f"result = {result}")
     if len(result) > 0:
         for item in result:
+            if not isinstance(item, list):
+                break
             box = item[0]
             text = item[1][0]
             rate = item[1][1]
