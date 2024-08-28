@@ -116,3 +116,83 @@ def response_data_with_binary_data(binary_data, file_name):
         # 如果识别效果很差，则将其旋转180°后应该方向正确
         # 此时关闭文字方向识别器再次识别文字，识别结果与第一次相近或者更好
         return final_result(200, file_name, vv, -1, result, rotated_result)
+    
+
+
+def load_img_with_path(fpath):
+    with open(fpath, 'rb') as f:
+        return f.read()
+
+
+def find_correct_angle(fpath):
+
+    '''
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_91.png'), 82.85,92.85)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_217.jpg'), 9.32,19.32)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_91.png'), 33.66,43.66)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_163.png'), 0,5.0)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_361.jpg'), 304.77,314.77)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_10.png'), 0.08,10.08)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_342.jpg'), 0,5.0)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_604.jpg'), 0,5.0)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_163.jpg'), 21.57,31.57)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_81.png'), 25.96,35.96)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_253.jpg'), 0,4)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_136.jpg'), 272.79,282.79)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_442.png'), 83.97,93.97)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_355.jpg'), 320.81,330.81)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_106.png'), 9.35,19.35)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_393.jpg'), 340.96,350.96)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_347.jpg'), 85,95)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_361.png'), 0,4)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_298.jpg'), 351.93,360)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_55.png'), 15.04,25.04)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/WechatIMG2055.jpg'), 344.85,354.85)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_sugar_325.jpg'), 10.71,20.71)
+    True
+    >>> is_between(find_correct_angle('/workspace/dataset-ocr/blood_pressure_127.png'), 75.88,85.88)
+    True
+    '''
+
+    binary_data = load_img_with_path(fpath)
+
+    file_name = os.path.basename(fpath)
+    result = response_data_with_binary_data(binary_data, file_name)
+    # TODO: 从result中获取角度，返回。
+    return 0
+
+def is_between(v, start, end, include_equal=True):
+    # '''
+    # >>> is_between(1, 1, 2)
+    # True
+    # >>> is_between(1, 1, 2, False)
+    # False
+    # >>> is_between(1, 6, 2)
+    # False
+    # >>> is_between(1, 6, 2, False)
+    # False
+    # '''
+    if include_equal:
+        return v <= max(start, end) and v >= min(start, end)
+    return v < max(start, end) and v > min(start, end)
