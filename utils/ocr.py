@@ -45,7 +45,7 @@ def result_from_ocr_with_path(image_path, use_angle_cls=True, lang="ch"):
     >>> len(result_from_ocr_with_path(path_with_image_name('blood_pressure_355.jpg'), True, lang)) > 0
     True    
     '''
-    ocr = PaddleOCR(use_angle_cls, lang)
+    ocr = PaddleOCR(use_angle_cls=use_angle_cls, lang=lang)
     return ocr.ocr(image_path)    
 
 
@@ -75,7 +75,7 @@ def result_from_ocr_with_bytes(image_bytes, use_angle_cls=True, lang='ch'):
         temp_image = temp_image.convert('RGB')
     # temp_image = image_bytes
 
-    ocr = PaddleOCR(use_angle_cls, lang)
+    ocr = PaddleOCR(use_angle_cls=use_angle_cls, lang=lang)
     return ocr.ocr(np.array(temp_image), use_angle_cls, lang)    
 
 
