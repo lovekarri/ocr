@@ -157,13 +157,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_100.png'), 1.34,11.34)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_101.png'), 348.83,358.83)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_101.png'), 340.83,350.83)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_102.png'), 352.37,360)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_103.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_104.png'), 351.85,360)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_104.png'), 330.85,340.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_105.png'), 0,9.54)
     True
@@ -201,7 +201,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_120.png'), 0,7.82)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_121.png'), 3.75,13.75)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_121.png'), 10.75,20.75)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_122.png'), 0,5.0)
     True
@@ -209,7 +209,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_124.png'), 0,9.9)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_125.png'), 327.65,337.65)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_125.png'), 322.65,332.65)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_126.png'), 0,5.0)
     True
@@ -227,7 +227,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_134.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_135.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_135.png'), 90,100.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_136.png'), 0,5.0)
     True
@@ -247,11 +247,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_145.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_146.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_146.png'), 347,357.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_148.png'), 0,7.36)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_149.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_149.png'), 3,13.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_15.png'), 0,5.0)
     True
@@ -277,7 +277,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_160.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_161.png'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_161.png'), 8,18)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_162.png'), 351.48,360)
     True
@@ -303,7 +303,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_173.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_174.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_174.png'), 265,275.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_175.png'), 85,95)
     True
@@ -319,7 +319,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_181.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_182.png'), 82.27,92.27)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_182.png'), 268.27,278.27)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_183.png'), 0,5.0)
     True
@@ -335,23 +335,23 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_19.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_190.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_190.jpg'), 0,8.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_191.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_192.jpg'), 0,4)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_193.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_193.jpg'), 2,12.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_194.jpg'), 352.4,360)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_195.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_196.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_196.jpg'), 175,185.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_197.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_197.jpg'), 350,360.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_198.jpg'), 277.8,287.8)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_198.jpg'), 95.8,105.8)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_199.jpg'), 0,5.0)
     True
@@ -363,9 +363,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_201.jpg'), 353.7,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_202.jpg'), 85,95)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_202.jpg'), 38,48)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_203.jpg'), 273.92,283.92)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_203.jpg'), 93.92,103.92)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_204.jpg'), 0,5.0)
     True
@@ -395,7 +395,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_216.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_217.jpg'), 9.32,19.32)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_217.jpg'), 18.32,28.32)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_218.jpg'), 0,5.0)
     True
@@ -417,9 +417,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_226.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_227.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_227.jpg'), 265,275.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_228.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_228.jpg'), 265,275.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_229.jpg'), 0,5.0)
     True
@@ -447,13 +447,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_24.png'), 0,8.01)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_240.jpg'), 344.95,354.95)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_240.jpg'), 337.95,347.95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_241.jpg'), 341.07,351.07)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_242.jpg'), 58.82,68.82)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_242.jpg'), 70.82,80.82)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_243.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_243.jpg'), 70.82,80.82)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_244.jpg'), 0,5.0)
     True
@@ -463,7 +463,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_247.jpg'), 85,95)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_248.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_248.jpg'), 0,10.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_249.jpg'), 0,5.0)
     True
@@ -559,15 +559,15 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_290.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_291.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_291.jpg'), 175,185.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_292.jpg'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_292.jpg'), 20,30)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_293.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_294.jpg'), 85,95)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_294.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_295.jpg'), 58.19,68.19)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_295.jpg'), 83.19,93.19)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_296.jpg'), 83.75,93.75)
     True
@@ -583,19 +583,19 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_300.jpg'), 1.71,11.71)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_301.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_301.jpg'), 75,85.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_302.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_302.jpg'), 85,95.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_303.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_303.jpg'), 340,3505.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_304.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_304.jpg'), 85,95.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_305.jpg'), 338.34,348.34)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_306.jpg'), 85,95)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_306.jpg'), 255,265)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_307.jpg'), 334.08,344.08)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_307.jpg'), 275.08,285.08)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_308.jpg'), 0,6.22)
     True
@@ -605,21 +605,21 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_310.jpg'), 350.36,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_311.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_311.jpg'), 351,360.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_312.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_312.jpg'), 65,75.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_313.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_314.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_314.jpg'), 265.88,275.88)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_315.jpg'), 348.88,358.88)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_315.jpg'), 265.88,275.88)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_316.jpg'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_316.jpg'), 325,335)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_317.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_317.jpg'), 80,90.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_318.jpg'), 14.41,24.41)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_318.jpg'), 20.41,30.41)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_319.jpg'), 0,5.0)
     True
@@ -631,19 +631,19 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_322.jpg'), 0,6.47)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_323.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_323.jpg'), 15,25.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_324.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_325.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_326.jpg'), 319.25,329.25)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_326.jpg'), 308.25,318.25)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_327.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_328.jpg'), 352.1,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_329.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_329.jpg'), 350,360.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_33.png'), 0,5.0)
     True
@@ -653,7 +653,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_332.jpg'), 352.11,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_333.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_333.jpg'), 350,360.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_334.jpg'), 0,5.0)
     True
@@ -663,7 +663,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_337.jpg'), 83.68,93.68)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_338.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_338.jpg'), 350,360.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_339.jpg'), 0,5.0)
     True
@@ -697,13 +697,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_352.jpg'), 0,8.62)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_353.jpg'), 0.49,10.49)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_353.jpg'), 15.49,25.49)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_354.jpg'), 2.22,12.22)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_354.jpg'), 10.22,20.22)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_355.jpg'), 328.43,338.43)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_356.jpg'), 83.13,93.13)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_356.jpg'), 265.13,275.13)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_357.jpg'), 0,5.0)
     True
@@ -719,19 +719,19 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_362.jpg'), 348.96,358.96)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_363.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_363.jpg'), 1,11.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_364.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_365.jpg'), 0,9.82)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_366.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_366.jpg'), 0,10.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_367.jpg'), 0.36,10.36)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_368.jpg'), 0,8.07)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_369.jpg'), 340.56,350.56)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_369.jpg'), 335.56,345.56)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_37.png'), 0,5.0)
     True
@@ -799,7 +799,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_399.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_4.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_4.png'), 345.0,355.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_40.png'), 0,8.09)
     True
@@ -953,13 +953,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_499.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_5.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_5.png'), 281.0,291.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_50.png'), 343.21,353.21)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_503.png'), 351.37,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_504.png'), 3.43,13.43)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_504.png'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_506.png'), 0,5.0)
     True
@@ -1027,7 +1027,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_563.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_564.png'), 2.59,12.59)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_564.png'), 15,25)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_565.png'), 4.09,14.09)
     True
@@ -1055,9 +1055,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_577.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_578.jpg'), 346.47,356.47)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_578.jpg'), 325,335)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_579.jpg'), 0,4.22)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_579.jpg'), 347,357)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_58.png'), 0,5.0)
     True
@@ -1065,21 +1065,21 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_581.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_582.jpg'), 8.57,18.57)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_582.jpg'), 13,23)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_583.jpg'), 9.45,19.45)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_583.jpg'), 14.5,24.5)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_584.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_584.jpg'), 109,119)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_585.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_585.jpg'), 118,128)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_586.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_586.jpg'), 138,148)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_587.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_587.jpg'), 87,97)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_588.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_588.jpg'), 350,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_589.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_589.jpg'), 350,360)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_59.png'), 0,5.0)
     True
@@ -1093,25 +1093,25 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_594.jpg'), 0,8.56)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_595.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_595.jpg'), 265,275)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_596.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_597.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_598.jpg'), 274.67,284.67)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_598.jpg'), 105,115)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_599.jpg'), 279.04,289.04)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_599.jpg'), 105,115)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_6.png'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_60.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_600.jpg'), 353.8,360)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_600.jpg'), 105,115)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_601.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_601.jpg'), 90,100)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_602.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_602.jpg'), 90,100)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_603.jpg'), 351.02,360)
     True
@@ -1125,29 +1125,29 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_608.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_609.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_609.jpg'), 105,115)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_61.png'), 0.19,10.19)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_610.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_610.jpg'), 340,350)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_611.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_611.jpg'), 345,355)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_612.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_613.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_614.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_614.jpg'), 337,347)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_615.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_616.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_617.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_617.jpg'), 337,347)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_618.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_619.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_619.jpg'), 347,357)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_62.png'), 0,5.0)
     True
@@ -1240,21 +1240,21 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_10.png'), 0,7.45)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_100.png'), 273.02,283.02)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_100.png'), 20,30)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_101.png'), 351.49,360)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_102.png'), 353.22,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_104.png'), 11.75,21.75)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_104.png'), 25,35)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_105.jpg'), 267.0,277.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_106.jpg'), 351.59,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_107.jpg'), 351.48,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_107.jpg'), 175,185)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_108.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_108.jpg'), 85,95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_109.jpg'), 0,5.0)
     True
@@ -1262,19 +1262,19 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_110.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_111.jpg'), 0,8.77)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_111.jpg'), 80,90)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_112.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_112.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_113.jpg'), 13.63,23.63)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_113.jpg'), 205,215)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_114.jpg'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_114.jpg'), 250,260)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_115.jpg'), 19.66,29.66)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_115.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_116.jpg'), 9.52,19.52)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_116.jpg'), 350,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_117.jpg'), 0,7.47)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_117.jpg'), 340,350)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_118.jpg'), 0,7.58)
     True
@@ -1284,7 +1284,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_120.jpg'), 6.77,16.77)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_121.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_121.jpg'), 175,185)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_122.jpg'), 351.39,360)
     True
@@ -1296,13 +1296,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_126.jpg'), 309.29,319.29)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_127.jpg'), 334.25,344.25)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_127.jpg'), 325,335)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_128.jpg'), 0,6.57)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_129.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_13.png'), 315.19,325.19)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_13.png'), 325.19,335.19)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_130.jpg'), 0,6.99)
     True
@@ -1316,7 +1316,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_135.jpg'), 352.71,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_136.jpg'), 272.79,282.79)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_136.jpg'), 185,195)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_137.jpg'), 0,5.0)
     True
@@ -1330,9 +1330,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_141.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_142.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_142.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_143.jpg'), 17.25,27.25)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_143.jpg'), 75,85)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_144.jpg'), 0,5.0)
     True
@@ -1340,7 +1340,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_146.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_147.jpg'), 1.46,11.46)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_147.jpg'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_148.jpg'), 0,5.0)
     True
@@ -1348,9 +1348,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_15.png'), 3.62,13.62)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_150.jpg'), 0,9.71)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_150.jpg'), 260,270)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_151.jpg'), 7.83,17.83)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_151.jpg'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_152.jpg'), 353.57,360)
     True
@@ -1366,29 +1366,29 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_158.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_159.jpg'), 84.41,94.41)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_159.jpg'), 265,275)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_16.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_160.jpg'), 0,8.7)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_160.jpg'), 265,275)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_161.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_162.jpg'), 80.41,90.41)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_162.jpg'), 85,95)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_163.jpg'), 21.57,31.57)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_163.jpg'), 35,45)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_164.jpg'), 270.19,280.19)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_164.jpg'), 90,100)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_165.jpg'), 76.71,86.71)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_165.jpg'), 85,95)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_166.jpg'), 347.91,357.91)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_166.jpg'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_167.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_168.jpg'), 70.96,80.96)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_168.jpg'), 315,325)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_169.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_169.jpg'), 255,265)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_17.png'), 0,8.61)
     True
@@ -1412,13 +1412,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_179.jpg'), 0.1,10.1)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_18.png'), 56.39,66.39)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_18.png'), 65,75)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_180.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_181.jpg'), 351.02,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_182.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_182.jpg'), 85,95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_183.jpg'), 0,5.0)
     True
@@ -1436,9 +1436,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_19.png'), 349.81,359.81)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_190.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_190.jpg'), 305,315)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_191.jpg'), 351.53,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_191.jpg'), 305,315)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_192.jpg'), 7.71,17.71)
     True
@@ -1448,11 +1448,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_195.jpg'), 79.14,89.14)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_196.jpg'), 85,95)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_196.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_197.jpg'), 340.26,350.26)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_197.jpg'), 160,170)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_198.jpg'), 353.35,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_198.jpg'), 45,55)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_199.jpg'), 347.64,357.64)
     True
@@ -1496,7 +1496,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_216.jpg'), 82.5,92.5)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_217.jpg'), 0,9.36)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_217.jpg'), 15,25)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_218.jpg'), 0,5.93)
     True
@@ -1514,19 +1514,19 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_224.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_225.jpg'), 3.58,13.58)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_225.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_226.jpg'), 71.91,81.91)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_226.jpg'), 265,275)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_227.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_228.jpg'), 0,7.63)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_228.jpg'), 85,95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_229.jpg'), 0,6.85)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_23.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_230.jpg'), 345.91,355.91)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_230.jpg'), 265,275)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_231.jpg'), 1.05,11.05)
     True
@@ -1536,19 +1536,19 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_234.jpg'), 0,7.43)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_235.jpg'), 85,95)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_235.jpg'), 0,5)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_236.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_236.jpg'), 180,190)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_237.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_238.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_238.jpg'), 270,280)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_239.jpg'), 0,7.12)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_24.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_240.jpg'), 17.43,27.43)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_240.jpg'), 0,10)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_241.jpg'), 0,5.0)
     True
@@ -1558,7 +1558,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_244.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_245.jpg'), 74.85,84.85)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_245.jpg'), 65,75)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_246.jpg'), 1.57,11.57)
     True
@@ -1642,15 +1642,15 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_282.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_283.jpg'), 81.99,91.99)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_283.jpg'), 261,271)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_284.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_284.jpg'), 175,185)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_285.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_285.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_286.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_286.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_287.jpg'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_287.jpg'), 255,265)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_288.jpg'), 0,6.95)
     True
@@ -1658,7 +1658,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_29.png'), 352.88,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_290.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_290.jpg'), 35,45)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_291.jpg'), 0,5.0)
     True
@@ -1674,7 +1674,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_297.jpg'), 0,8.26)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_298.jpg'), 351.93,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_298.jpg'), 80,90)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_299.jpg'), 0,5.0)
     True
@@ -1686,13 +1686,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_301.jpg'), 3.13,13.13)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_302.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_302.jpg'), 170,180)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_303.jpg'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_304.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_305.jpg'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_305.jpg'), 255,265)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_306.jpg'), 0,8.15)
     True
@@ -1706,7 +1706,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_310.jpg'), 0,6.31)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_311.jpg'), 273.07,283.07)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_311.jpg'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_312.jpg'), 0,5.0)
     True
@@ -1720,11 +1720,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_317.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_318.jpg'), 85,95)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_318.jpg'), 285,295)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_319.jpg'), 67.45,77.45)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_319.jpg'), 1,11)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_32.png'), 83.08,93.08)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_32.png'), 0,10)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_320.jpg'), 352.55,360)
     True
@@ -1742,7 +1742,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_327.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_328.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_328.jpg'), 85,95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_329.jpg'), 0,5.0)
     True
@@ -1760,11 +1760,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_335.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_336.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_336.jpg'), 85,95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_337.jpg'), 352.5,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_338.jpg'), 2.3,12.3)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_338.jpg'), 350,360)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_339.jpg'), 0,5.0)
     True
@@ -1774,7 +1774,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_341.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_342.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_342.jpg'), 85,95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_343.jpg'), 0,8.5)
     True
@@ -1782,7 +1782,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_345.jpg'), 353.14,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_346.jpg'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_346.jpg'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_347.jpg'), 0,5.0)
     True
@@ -1796,41 +1796,41 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_352.png'), 353.3,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_354.png'), 12.28,22.28)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_354.png'), 40,50)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_355.png'), 0,5.92)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_356.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_356.png'), 347,357)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_357.png'), 346.36,356.36)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_357.png'), 0,8)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_36.png'), 351.86,360)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_360.png'), 353.5,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_361.png'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_361.png'), 55,65)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_362.png'), 0,6.68)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_363.png'), 0,4.09)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_365.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_365.png'), 345,355)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_366.png'), 351.84,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_368.png'), 0.33,10.33)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_368.png'), 5,15)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_37.png'), 0,4.43)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_372.png'), 343.5,353.5)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_372.png'), 0,5)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_373.png'), 350.67,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_373.png'), 347,357)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_38.png'), 0,4)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_380.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_380.png'), 60,70)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_384.png'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_384.png'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_389.png'), 0,7.64)
     True
@@ -1842,11 +1842,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_397.png'), 353.13,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_399.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_399.png'), 325,335)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_4.png'), 1.77,11.77)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_40.png'), 43.18,53.18)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_40.png'), 65,75)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_401.png'), 2.13,12.13)
     True
@@ -1874,11 +1874,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_445.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_45.png'), 13.43,23.43)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_45.png'), 337,347)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_452.png'), 352.34,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_455.png'), 341.26,351.26)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_455.png'), 5,15)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_46.png'), 8.39,18.39)
     True
@@ -1888,9 +1888,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_472.png'), 0,8.62)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_475.jpg'), 350.91,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_475.jpg'), 335,345)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_476.jpg'), 340.29,350.29)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_476.jpg'), 325,335)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_477.jpg'), 268.06,278.06)
     True
@@ -1898,13 +1898,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_479.jpg'), 11.63,21.63)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_48.png'), 352.17,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_48.png'), 342.17,352.17)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_480.jpg'), 330.51,340.51)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_481.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_481.jpg'), 343,353)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_49.png'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_49.png'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_5.png'), 345.13,355.13)
     True
@@ -1920,11 +1920,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_55.png'), 15.04,25.04)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_56.png'), 9.83,19.83)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_56.png'), 21,31)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_57.png'), 0,6.24)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_58.png'), 21.57,31.57)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_58.png'), 40,50)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_59.png'), 0,7.73)
     True
@@ -1934,15 +1934,15 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_61.png'), 352.51,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_62.png'), 0,8.73)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_62.png'), 5,15)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_63.png'), 27.99,37.99)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_63.png'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_67.png'), 352.69,360)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_68.png'), 7.76,17.76)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_69.png'), 85,95)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_69.png'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_7.png'), 85,95)
     True
@@ -1956,9 +1956,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_75.png'), 82.33,92.33)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_76.png'), 352.08,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_76.png'), 0,10)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_77.png'), 352.02,360)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_77.png'), 0,10)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_79.png'), 0,5.0)
     True
@@ -1974,7 +1974,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_85.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_86.png'), 340.69,350.69)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_86.png'), 0,5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_87.png'), 0,9.57)
     True
@@ -1982,7 +1982,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_9.png'), 0,8.51)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_90.png'), 9.42,19.42)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_90.png'), 15,25)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_91.png'), 33.66,43.66)
     True
@@ -2322,9 +2322,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_252.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_253.jpg'), 0,4)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_253.jpg'), 45,55)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_254.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_254.jpg'), 350,360.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_255.jpg'), 351.19,360)
     True
@@ -2336,7 +2336,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_259.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_26.png'), 82.34,92.34)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_26.png'), 268.34,278.34)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_260.jpg'), 0,7.2)
     True
@@ -2362,7 +2362,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_270.jpg'), 342.01,352.01)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_271.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_271.jpg'), 350,360.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_272.jpg'), 0,5.0)
     True
@@ -2384,11 +2384,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_280.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_281.jpg'), 84.19,94.19)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_281.jpg'), 350.19,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_282.jpg'), 0,9.18)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_282.jpg'), 342,252.18)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_283.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_283.jpg'), 85,95.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_284.jpg'), 351.08,360)
     True
@@ -2528,7 +2528,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_345.jpg'), 0,4)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_346.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_346.jpg'), 350,360.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_347.jpg'), 85,95)
     True
@@ -2602,11 +2602,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_379.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_38.png'), 9.25,19.25)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_38.png'), 17.25,27.25)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_380.jpg'), 13.0,23.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_380.jpg'), 20.0,30.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_381.jpg'), 7.31,17.31)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_381.jpg'), 20.31,30.31)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_382.jpg'), 6.8,16.8)
     True
@@ -2618,9 +2618,9 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_386.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_387.jpg'), 5.3,15.3)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_387.jpg'), 13.5,23.5)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_388.jpg'), 6.04,16.04)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_388.jpg'), 12.5,22.5)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_389.jpg'), 0,5.0)
     True
@@ -2632,17 +2632,17 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_392.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_393.jpg'), 341.2,351.2)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_393.jpg'), 330.2,340.2)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_394.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_395.jpg'), 8.67,18.67)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_395.jpg'), 25,35)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_396.jpg'), 47.57,57.57)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_397.jpg'), 350.68,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_398.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_398.jpg'), 265,275)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_399.jpg'), 0,5.0)
     True
@@ -2650,13 +2650,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_40.png'), 0,8.09)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_400.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_400.jpg'), 340,350)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_401.jpg'), 352.99,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_402.jpg'), 328.08,338.08)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_402.jpg'), 315.08,325.08)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_403.jpg'), 7.26,17.26)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_403.jpg'), 30,40)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_404.jpg'), 0,5.0)
     True
@@ -2672,17 +2672,17 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_41.png'), 266.58,276.58)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_410.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_410.jpg'), 345,355)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_411.jpg'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_411.jpg'), 265,275)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_412.jpg'), 342.2,352.2)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_412.jpg'), 335.2,345.2)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_413.jpg'), 0,7.1)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_414.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_415.jpg'), 80.79,90.79)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_415.jpg'), 90.79,100.79)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_416.jpg'), 0,5.0)
     True
@@ -2712,7 +2712,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_429.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_43.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_43.png'), 0,10.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_430.png'), 5.38,15.38)
     True
@@ -2724,7 +2724,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_435.png'), 353.19,360)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_436.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_436.png'),330,340)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_439.png'), 353.13,360)
     True
@@ -2764,11 +2764,11 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_462.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_463.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_463.png'), 90,100)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_465.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_468.png'), 5.01,15.01)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_468.png'), 88,98)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_47.png'), 0,5.0)
     True
@@ -2780,7 +2780,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_48.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_482.png'), 277.26,287.26)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_482.png'), 100,110)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_483.png'), 0,5.0)
     True
@@ -2798,7 +2798,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_497.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_499.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_499.png'), 90,100)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_5.png'), 0,5.0)
     True
@@ -2828,7 +2828,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_522.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_525.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_525.png'), 340,350)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_526.png'), 348.09,358.09)
     True
@@ -2836,7 +2836,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_53.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_530.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_530.png'), 90,100)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_533.png'), 0,5.0)
     True
@@ -2846,7 +2846,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_538.png'), 1.46,11.46)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_54.png'), 340.38,350.38)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_54.png'), 65,75)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_543.png'), 351.35,360)
     True
@@ -3008,13 +3008,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_65.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_66.png'), 347.01,357.01)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_66.png'), 330.01,340.01)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_67.png'), 0,6.75)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_68.png'), 343.91,353.91)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_68.png'), 327.91,337.91)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_69.png'), 268.18,278.18)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_69.png'), 337.18,347.18)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_7.png'), 344.22,354.22)
     True
@@ -3036,13 +3036,13 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_78.png'), 0,4.38)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_79.png'), 30.87,40.87)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_79.png'), 35.87,45.87)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_8.png'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_80.png'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_81.png'), 25.96,35.96)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_81.png'), 30.96,40.96)
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_82.png'), 0,5.0)
     True
@@ -3080,7 +3080,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_98.png'), 0,9.72)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_99.png'), 348.29,358.29)
+    >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_99.png'), 345.29,355.29)
     True
     '''
     if include_equal:
