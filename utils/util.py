@@ -80,7 +80,7 @@ def closed_angle_of_result(result):
 # 计算已知矩形4个顶点坐标时其长边与水平线夹角
 # rectangle_points: 数组，限制长度为4个元素，每个元素为矩形的1个顶点坐标 
 def angle_of_longer_side_rectangle(rectangle_points):
-    print(f'rectangle_points = {rectangle_points}, len = {len(rectangle_points)}')
+    # print(f'rectangle_points = {rectangle_points}, len = {len(rectangle_points)}')
     assert isinstance(rectangle_points, list), "函数入参应该是数组"
     assert len(rectangle_points) == 4, "函数入参数组长度应为4"
     for point in rectangle_points:
