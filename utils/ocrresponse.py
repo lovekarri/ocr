@@ -135,9 +135,8 @@ def find_correct_angle(fpath):
     file_name = os.path.basename(fpath)
     result = response_data_with_binary_data(binary_data, file_name)
     # TODO: 从result中获取角度，返回。
-    d = json.load(result)
-    result = d['result']
-    anglevalue = result['anglevalue']
+    d = result['result']
+    anglevalue = d['anglevalue']
     return anglevalue
 
 def is_between(v, start, end, include_equal=True):
