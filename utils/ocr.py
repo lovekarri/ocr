@@ -4,7 +4,7 @@ import base64
 import io
 from PIL import Image
 import numpy as np
-from .util import angle_of_longer_side_rectangle
+from util import angle_of_longer_side_rectangle
 
 
 def json_with_result(result):
