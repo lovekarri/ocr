@@ -150,7 +150,7 @@ def draw_red_dot_and_label_with_image(img, result):
     draw = ImageDraw.Draw(img)
 
     font = ImageFont.load_default()
-    angle_font = ImageFont.truetype('arial.ttf', size=30)
+    angle_font = font.font_variant(size=30)
     value = closed_angle_of_result(result)
     textvalue = f'{value}'
     textvalue_width, textvalue_height = draw.textsize(textvalue, angle_font)
