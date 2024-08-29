@@ -187,6 +187,13 @@ def is_between(v, start, end, include_equal=True):
     return v < max(start, end) and v > min(start, end)
 
 
+# if __name__ == '__main__':
+#     import doctest
+#     print(doctest.testmod(verbose=False, report=False))
+
 if __name__ == '__main__':
-    import doctest
-    print(doctest.testmod(verbose=False, report=False))
+    import sys
+    if len(sys.argv) > 1:
+        find_correct_angle(sys.argv[1])
+    else:
+        find_correct_angle('/paddle/blood_pressure/blood_pressure_111.png')
