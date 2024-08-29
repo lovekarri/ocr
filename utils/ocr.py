@@ -4,6 +4,7 @@ import base64
 import io
 from PIL import Image
 import numpy as np
+# from utils.util import angle_of_longer_side_rectangle
 from util import angle_of_longer_side_rectangle
 
 
@@ -25,7 +26,7 @@ def json_with_result(result):
 			})
 			# print(f"box: {box}, text: {text}, rate: {rate}, angle: {angle}")
 
-	json_result = json.dumps(result_list)
+	# json_result = json.dumps(result_list)
 	# print(f"json_result = {json_result}")
 	# return json_result	
 	return result_list

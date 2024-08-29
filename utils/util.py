@@ -149,6 +149,13 @@ def rotate_image_with_binary_data(binary_data, angle):
 def draw_red_dot_and_label_with_image(img, result):
     draw = ImageDraw.Draw(img)
 
+    font = ImageFont.load_default()
+    angle_font = ImageFont.truetype('arial.ttf', size=30)
+    value = closed_angle_of_result(result)
+    textvalue = f'{value}'
+    textvalue_width, textvalue_height = draw.textsize(textvalue, angle_font)
+    draw.text((20, 20 - textvalue_height // 2), textvalue, font=angle_font, fill='red')
+
     for item in result:
         point_list = item.get('box')
         for point in point_list:
@@ -159,7 +166,7 @@ def draw_red_dot_and_label_with_image(img, result):
             draw.ellipse((x - dot_size, y - dot_size, x + dot_size, y + dot_size), fill='red')
 
             # 加载字体
-            font = ImageFont.load_default()
+            
 
             # 绘制坐标文本
             text = f'({x}, {y})'

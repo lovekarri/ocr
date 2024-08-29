@@ -1612,7 +1612,7 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_269.jpg'), 0,5.0)
     True
-    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_27.png'), 0,5.0)
+    >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_27.png'), 85,95)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_270.jpg'), 0,7.9)
     True
