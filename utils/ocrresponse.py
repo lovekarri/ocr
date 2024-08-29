@@ -68,7 +68,7 @@ def rotated_file_path_with_anglevalue(file_name):
     #     rotated = 'anticlockwise'
     rotated_file_name = os.path.splitext(file_name)[0] + '_rotated.png'
     path = os.path.join(OCR_SAVE_DIRECTORY, rotated_file_name) 
-    print(f'rotated_file_path = {path}')
+    # print(f'rotated_file_path = {path}')
     return path
 
 
@@ -136,7 +136,7 @@ def find_correct_angle(fpath):
     result = response_data_with_binary_data(binary_data, file_name)
     # TODO: 从result中获取角度，返回。
     anglevalue = result['result']['anglevalue']
-    print(f'anglevalue = {anglevalue}')
+    # print(f'anglevalue = {anglevalue}')
     return anglevalue
 
 def is_between(v, start, end, include_equal=True):
@@ -187,13 +187,14 @@ def is_between(v, start, end, include_equal=True):
     return v < max(start, end) and v > min(start, end)
 
 
-# if __name__ == '__main__':
-#     import doctest
-#     print(doctest.testmod(verbose=False, report=False))
-
 if __name__ == '__main__':
-    import sys
-    if len(sys.argv) > 1:
-        find_correct_angle(sys.argv[1])
-    else:
-        find_correct_angle('/paddle/blood_pressure/blood_pressure_111.png')
+    import doctest
+    print(doctest.testmod(verbose=False, report=False))
+
+
+# if __name__ == '__main__':
+#     import sys
+#     if len(sys.argv) > 1:
+#         find_correct_angle(sys.argv[1])
+#     else:
+#         find_correct_angle('/paddle/blood_pressure/blood_pressure_111.png')

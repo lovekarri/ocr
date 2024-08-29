@@ -15,7 +15,7 @@ def json_with_result(result):
 			box = item[0]
 			text = item[1][0]
 			rate = item[1][1]
-			print(f'box = {box}, box len = {len(box)}')
+			# print(f'box = {box}, box len = {len(box)}')
 			angle = angle_of_longer_side_rectangle(box)
 			result_list.append({
 				"box":box,
@@ -23,10 +23,10 @@ def json_with_result(result):
 				"rate": rate,
 				"angle": angle
 			})
-			print(f"box: {box}, text: {text}, rate: {rate}, angle: {angle}")
+			# print(f"box: {box}, text: {text}, rate: {rate}, angle: {angle}")
 
 	json_result = json.dumps(result_list)
-	print(f"json_result = {json_result}")
+	# print(f"json_result = {json_result}")
 	# return json_result	
 	return result_list
 

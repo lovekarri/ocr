@@ -7,8 +7,8 @@ from PIL import Image, ImageDraw, ImageFont
 # x2: 第二个点的x坐标
 # y2: 第二个点的y坐标
 def angle_between_two_points(x1, y1, x2, y2):
-    print(f'(x1, y1) = ({x1}, {y1}), (x2,y2) = ({x2}, {y2})')
-    print(f"y2-y1 = {y2 - y1}, x2-x1 = {x2 - x1}")
+    # print(f'(x1, y1) = ({x1}, {y1}), (x2,y2) = ({x2}, {y2})')
+    # print(f"y2-y1 = {y2 - y1}, x2-x1 = {x2 - x1}")
     if x2 == x1:
         slope = None
     else:
@@ -20,7 +20,7 @@ def angle_between_two_points(x1, y1, x2, y2):
     else:
         angle = math.degrees(math.atan(slope))
 
-    print(f'tan → angle: {slope} → {angle}')
+    # print(f'tan → angle: {slope} → {angle}')
 
     # 由于坐标零点在图片左上角，angle与坐标零点在图片左下角正相反
     # 可以考虑将坐标系翻转到左下角，angle直接取反
