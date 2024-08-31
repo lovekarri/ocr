@@ -110,7 +110,7 @@ def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
     # 计算实际旋转角度
     anticlosewise = count_the_real_angle_of_anticlockwise(angle_value)
     # 旋转图片
-    rotated_image = rotate_image(bytesio, anticlosewise)
+    rotated_image = rotate_image(image_with_bytesio(bytesio), anticlosewise)
     # 获取旋转后图片的BytesIO字节串
     rotated_bytesio = bytesio_with_image(rotated_image)
     # 第二次ocr，关闭文字方向识别器
