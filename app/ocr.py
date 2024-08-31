@@ -51,9 +51,9 @@ def count_the_real_angle_of_anticlockwise(angle_value: float) -> float:
     return angle_value if angle_value >= 0 else angle_value + 360
 
 
-# 异步保存图片到指定路径
-async def save_image(file_path: str, image: Image) -> None:
-    async with open(file_path, 'wb') as f:
+# 保存图片到指定路径
+def save_image(file_path: str, image: Image) -> None:
+    with open(file_path, 'wb') as f:
         image.save(f, format='PNG')
 
 
@@ -64,22 +64,22 @@ def save_original_image(file_name:str, image:Image) -> None:
 
 
 # 异步保存json文件
-async def save_json_file(file_name: str, result: list) -> None:
+def save_json_file(file_name: str, result: list) -> None:
     json_file = json.load(result)
     json_name = os.path.splitext(file_name)[0] + '.json'
     full_path = os.path.join(OCR_JSON_SAVE_DIRECTORY, json_name)
-    async with open(full_path, 'wb', encoding='utf-8') as f:
+    with open(full_path, 'wb', encoding='utf-8') as f:
         json.dump(json_file, f, ensure_ascii=False, indent=4)
 
 
 # 绘制描点后保存图片
-async def save_result_image(file_name: str, image: Image, result: list, angle_value=None) -> None:
+def save_result_image(file_name: str, image: Image, result: list, angle_value=None) -> None:
     # async def inner():
     #     image_aft_draw = await draw_red_dot_and_label_with_image(image, result, angle_value)
     #     full_path = os.path.join(RESULT_IMAGE_DIRECTORY, file_name)
     #     save_image(full_path, image_aft_draw)
     # asyncio.run(inner())
-    image_aft_draw = await draw_red_dot_and_label_with_image(image, result, angle_value)
+    image_aft_draw = draw_red_dot_and_label_with_image(image, result, angle_value)
     full_path = os.path.join(RESULT_IMAGE_DIRECTORY, file_name)
     save_image(full_path, image_aft_draw)
 
