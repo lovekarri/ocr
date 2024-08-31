@@ -125,7 +125,7 @@ async def result_with_binary_data(binary_data: bytes, file_name: str) -> dict:
 
 
 # 获取图片识别结果
-async def response_data_from_body(file: UploadFile = File(...)) -> dict:
+async def response_data_from_body(file: UploadFile = File(...)):
     if not file.content_type:
         raise HTTPException(status_code=400, detail="未提供文件")
 
