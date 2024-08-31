@@ -17,5 +17,5 @@ def image_with_bytesio(bytesio: io.BytesIO) -> Image:
 def bytesio_with_image(image: Image) -> io.BytesIO:
     byte_io = io.BytesIO()
     image.save(byte_io, format='PNG')
-    return byte_io.getvalue()
+    return byte_io
     
