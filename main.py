@@ -4,7 +4,7 @@ import io
 import subprocess
 import re
 from utils.ocrresponse import response_data_with_binary_data
-from app.ocr import response_data_from_body
+from app.ocr import response_data_from_body, result_with_binary_data
 
 
 app = FastAPI()
@@ -187,21 +187,22 @@ async def upload_binary_data(file: UploadFile = File(...)):
 
 
 @app.post("/image-ocr/")
-def ocr_binary_data(file: UploadFile = File(...)):
+async def ocr_binary_data(file: UploadFile = File(...)):
 
 
 	# 检查文件是否为空
-	# if not file.content_type:
-	# 	raise HTTPException(status_code=400, detail="未提供文件")
+	if not file.content_type:
+		raise HTTPException(status_code=400, detail="未提供文件")
 	
-	# # 为文件生成唯一的文件名
-	# filename = f"{hash(file.content_type)}_{file.filename}"
-	# # 读取文件的二进制数据
-	# # Coroutine[Any, Any, bytes]
-	# binary_data = await file.read()
-
+	# 为文件生成唯一的文件名
+	filename = f"{hash(file.content_type)}_{file.filename}"
+	# 读取文件的二进制数据
+	# Coroutine[Any, Any, bytes]
+	binary_data = await file.read()
 	
-	return response_data_from_body(file)
+	return result_with_binary_data(io.BytesIO(binary_data), filename)
+	
+	# return response_data_from_body(file)
 	
 	##################################################
 	# 以下为另一个实现逻辑
