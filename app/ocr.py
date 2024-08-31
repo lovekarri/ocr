@@ -52,7 +52,7 @@ def count_the_real_angle_of_anticlockwise(angle_value: float) -> float:
 
 # 异步保存图片到指定路径
 async def save_image(file_path: str, image: Image) -> None:
-    async with aiofiles.open(file_path, 'wb') as f:
+    async with open(file_path, 'wb') as f:
         image.save(f, format='PNG')
 
 
