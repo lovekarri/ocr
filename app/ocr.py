@@ -16,15 +16,15 @@ RESULT_IMAGE_DIRECTORY = "/paddle/images/ocr/result"
 ORIGINAL_IMAGE_DIRECTORY = "/paddle/images/ocr/original"
 OCR_JSON_SAVE_DIRECTORY = "/paddle/images/ocr/json"
 
-class OCR:
+# class OCR:
 
-    def __init__(self, file_name) -> None:
-        self.file_name = file_name
-        self.clockwise_value = 0
-        self.bytesio = None
-        self.origin_results = []
-        self.rotated_result = []
-        pass
+#     def __init__(self, file_name) -> None:
+#         self.file_name = file_name
+#         self.clockwise_value = 0
+#         self.bytesio = None
+#         self.origin_results = []
+#         self.rotated_result = []
+#         pass
 
 
 # file_name: 原始文件名
