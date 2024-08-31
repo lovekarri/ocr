@@ -131,16 +131,16 @@ def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
 
 
 # 获取图片识别结果
-def response_data_from_body(file: UploadFile = File(...)) -> dict:
+async def response_data_from_body(file: UploadFile = File(...)) -> dict:
     if not file.content_type:
         raise HTTPException(status_code=400, detail="未提供文件")
 
 	# 为文件生成唯一的文件名
     file_name = f"{hash(file.content_type)}_{file.filename}"
 	# 读取文件的二进制数据
-    binary_data = file.read()
-    bytesio = io.BytesIO(binary_data)
-    # bytesio = bytesio_with_binary_data(binary_data)
+    binary_data = await file.read()
+    # bytesio = io.BytesIO(binary_data)
+    bytesio = bytesio_with_binary_data(binary_data)
 	# 将二进制数据保存到内存
     return result_with_binary_data(bytesio, file_name)
 	

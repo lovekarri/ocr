@@ -187,7 +187,19 @@ async def upload_binary_data(file: UploadFile = File(...)):
 
 
 @app.post("/image-ocr/")
-async def ocr_binary_data(file: UploadFile = File(...)):
+def ocr_binary_data(file: UploadFile = File(...)):
+
+
+	# 检查文件是否为空
+	# if not file.content_type:
+	# 	raise HTTPException(status_code=400, detail="未提供文件")
+	
+	# # 为文件生成唯一的文件名
+	# filename = f"{hash(file.content_type)}_{file.filename}"
+	# # 读取文件的二进制数据
+	# # Coroutine[Any, Any, bytes]
+	# binary_data = await file.read()
+
 	
 	return response_data_from_body(file)
 	
@@ -197,14 +209,14 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 
 	# 检查文件是否为空
 	# if not file.content_type:
-	# 	raise HTTPException(status_code=400, detail="未提供文件")
+		# raise HTTPException(status_code=400, detail="未提供文件")
 	
-	# # 为文件生成唯一的文件名
+	# 为文件生成唯一的文件名
 	# filename = f"{hash(file.content_type)}_{file.filename}"
-	# # 读取文件的二进制数据
+	# 读取文件的二进制数据
 	# Coroutine[Any, Any, bytes]
 	# binary_data = await file.read()
-	# # 将二进制数据保存到内存
+	# 将二进制数据保存到内存
 	# memory_files[filename] = binary_data
 	# final_result = response_data_with_binary_data(binary_data, filename)
 	# return final_result
