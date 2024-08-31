@@ -25,7 +25,7 @@ def json_with_result(result):
 
 # ocr识别图片上的文字，输入为图片二进制字节流
 def ocr_image_from_bytesio(image_bytes, use_angle_cls=True, lang="ch"):
-	temp_image = Image.open(io.BytesIO(image_bytes))
+	temp_image = Image.open(image_bytes)
 	if temp_image.mode == 'RGBA':
 		temp_image = temp_image.convert('RGB')
 

@@ -2,6 +2,7 @@ import os
 import asyncio
 import aiofiles
 import json
+import io
 
 from fastapi import HTTPException, UploadFile, File
 from PIL import Image
@@ -84,9 +85,10 @@ async def save_result_image(file_name: str, image: Image, result: list, angle_va
 
 
 # 获取图片ocr结果数据
-def result_with_binary_data(binary_data: bytes, file_name: str) -> dict:
+# def result_with_binary_data(bytesio: bytes, file_name: str) -> dict:
+def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
     # 初始化BytesIO字节串
-    bytesio = bytesio_with_binary_data(binary_data)
+    
     # 保存原图
     save_original_image(file_name, image_with_bytesio(bytesio))
 
@@ -108,7 +110,7 @@ def result_with_binary_data(binary_data: bytes, file_name: str) -> dict:
     # 计算实际旋转角度
     anticlosewise = count_the_real_angle_of_anticlockwise(angle_value)
     # 旋转图片
-    rotated_image = rotate_image(binary_data, anticlosewise)
+    rotated_image = rotate_image(bytesio, anticlosewise)
     # 获取旋转后图片的BytesIO字节串
     rotated_bytesio = bytesio_with_image(rotated_image)
     # 第二次ocr，关闭文字方向识别器
@@ -137,7 +139,8 @@ def response_data_from_body(file: UploadFile = File(...)) -> dict:
     file_name = f"{hash(file.content_type)}_{file.filename}"
 	# 读取文件的二进制数据
     binary_data = file.read()
+    bytesio = bytesio_with_binary_data(binary_data)
 	# 将二进制数据保存到内存
-    return result_with_binary_data(binary_data, file_name)
+    return result_with_binary_data(bytesio, file_name)
 	
 
