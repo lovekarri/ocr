@@ -98,7 +98,9 @@ async def result_with_binary_data(binary_data: bytes, file_name: str) -> dict:
     # 计算最佳旋转角度
     angle_value = closed_angle_of_result(origin_result)
     # 异步保存识别标注后的图片
-    asyncio.run(save_result_image(file_name, image_with_bytesio(bytesio), origin_result, angle_value))
+    # asyncio.run(save_result_image(file_name, image_with_bytesio(bytesio), origin_result, angle_value))
+    # 保存识别标注后的图片
+    save_result_image(file_name, image_with_bytesio(bytesio), origin_result, angle_value)
     
     # 角度 < 1 直接返回，不进行旋转
     if abs(angle_value) < 1:
@@ -115,7 +117,9 @@ async def result_with_binary_data(binary_data: bytes, file_name: str) -> dict:
     # 旋转后的图片名称
     rotated_file_name = os.path.splitext(file_name)[0] + '_rotated.png'
     # 异步保存第二次识别标注后的图片
-    asyncio.run(save_result_image(rotated_file_name, rotated_image, rotated_result))
+    # asyncio.run(save_result_image(rotated_file_name, rotated_image, rotated_result))
+    # 保存第二次识别标注后的图片
+    save_result_image(rotated_file_name, rotated_image, rotated_result)
 
     final = final_result(200, file_name, anticlosewise, False, origin_result, rotated_result)
     # 保存最终json文件
@@ -125,7 +129,7 @@ async def result_with_binary_data(binary_data: bytes, file_name: str) -> dict:
 
 
 # 获取图片识别结果
-async def response_data_from_body(file):
+async def response_data_from_body(file: UploadFile = File(...)) -> dict:
     if not file.content_type:
         raise HTTPException(status_code=400, detail="未提供文件")
 
