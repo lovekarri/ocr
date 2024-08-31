@@ -139,7 +139,8 @@ def response_data_from_body(file: UploadFile = File(...)) -> dict:
     file_name = f"{hash(file.content_type)}_{file.filename}"
 	# 读取文件的二进制数据
     binary_data = file.read()
-    bytesio = bytesio_with_binary_data(binary_data)
+    bytesio = io.BytesIO(binary_data)
+    # bytesio = bytesio_with_binary_data(binary_data)
 	# 将二进制数据保存到内存
     return result_with_binary_data(bytesio, file_name)
 	

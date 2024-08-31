@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 # 从二进制字节流生成BytesIO字节串
-def bytesio_with_binary_data(binary_data):
+def bytesio_with_binary_data(binary_data: bytes):
     return io.BytesIO(binary_data)
 
 
