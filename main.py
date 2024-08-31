@@ -202,6 +202,7 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	# # 为文件生成唯一的文件名
 	# filename = f"{hash(file.content_type)}_{file.filename}"
 	# # 读取文件的二进制数据
+	# Coroutine[Any, Any, bytes]
 	# binary_data = await file.read()
 	# # 将二进制数据保存到内存
 	# memory_files[filename] = binary_data
