@@ -15,7 +15,7 @@ def rotate_image(img: Image, angle: float) -> Image:
 # 在图片上把红点画出来并将坐标位置写在旁边
 # img: 图片
 # result: ocr识别出的文字信息
-async def draw_red_dot_and_label_with_image(img: Image, result: list, anglevalue=None) -> Image:
+def draw_red_dot_and_label_with_image(img: Image, result: list, anglevalue=None) -> Image:
     draw = ImageDraw.Draw(img)
     # 加载字体
     font = ImageFont.load_default()
