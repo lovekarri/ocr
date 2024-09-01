@@ -25,10 +25,7 @@ def get_anglevalue_from_path(file_path: str) -> float:
 
 def find_correct_angle(file_path: str) -> float:
 
-    result = get_anglevalue_from_path(file_path)
-    # TODO: 从result中获取角度，返回。
-    anglevalue = result['result']['anglevalue']
-    # print(f'anglevalue = {anglevalue}')
+    anglevalue = get_anglevalue_from_path(file_path)
     return anglevalue
 
 
