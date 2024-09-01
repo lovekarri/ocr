@@ -123,7 +123,7 @@ async def upload_binary_data(file: UploadFile = File(...)):
     #print(f'binary_data = {binary_data}')
 
     # memory_files[filename] = binary_data
-    return result_with_binary_data(binary_data, filename)
+    # return result_with_binary_data(binary_data, filename)
 ############################################################################
 
     file_path = os.path.join(DETECTION_SAVE_DIRECTORY, filename)
