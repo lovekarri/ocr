@@ -116,14 +116,15 @@ async def upload_binary_data(file: UploadFile = File(...)):
 	print(f'filename = {filename}')
 	print(f'content_type = {file.content_type}')
 
-	file_path = os.path.join(DETECTION_SAVE_DIRECTORY, filename)
-	print(f'file_path = {file_path}')
 	# 读取文件的二进制数据
 	binary_data = await file.read()
 
 	#print(f'binary_data = {binary_data}')
 
-	memory_files[filename] = binary_data
+	# memory_files[filename] = binary_data
+
+	file_path = os.path.join(DETECTION_SAVE_DIRECTORY, filename)
+	print(f'file_path = {file_path}')
 
 	# 将上传的文件保存到指定目录
 	with open(file_path, "wb") as f:
