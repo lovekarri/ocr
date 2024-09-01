@@ -1,3 +1,6 @@
+import io
+import os
+
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -21,7 +24,9 @@ def draw_red_dot_and_label_with_image(img: Image, result: list, anglevalue=None)
     font = ImageFont.load_default()
     # 如果角度不为空，将角度绘制在图片左上角
     if anglevalue != None:
-        angle_font = ImageFont.truetype('Arial.ttf', size=30)
+        abs_path = os.path.abspath('Arial.ttf')
+        print(f'abs_path = {abs_path}')
+        angle_font = ImageFont.truetype(abs_path, size=30)
         textvalue = f'{anglevalue}'
         textvalue_width, textvalue_height = draw.textsize(textvalue, angle_font)
         draw.text((20, 20 - textvalue_height // 2), textvalue, font=angle_font, fill='red')
