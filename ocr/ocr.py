@@ -29,6 +29,6 @@ def ocr_image_from_bytesio(image_bytes, use_angle_cls=True, lang="ch"):
 	if temp_image.mode == 'RGBA':
 		temp_image = temp_image.convert('RGB')
 
-	ocr = PaddleOCR(use_angle_cls=use_angle_cls, lang=lang)
+	ocr = PaddleOCR(use_angle_cls=use_angle_cls, lang=lang, use_gpu=True)
 	result = ocr.ocr(np.array(temp_image), cls=use_angle_cls)
 	return json_with_result(result=result)
