@@ -12,10 +12,9 @@ def get_anglevalue_from_path(file_path: str) -> float:
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-            if 'result' in data and isinstance(data['result'], list):
-                item = data['result']
-                if 'anglevalue' in item:
-                    return item['anglevalue']
+            if 'result' in data and isinstance(data['result'], dict):
+                if 'anglevalue' in data['result']:
+                    return data['result']['anglevalue']
             return -1
     except FileNotFoundError:
         return -1
