@@ -103,14 +103,15 @@ def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
     angle_value = closed_angle_of_result(origin_result)
     # 异步保存识别标注后的图片
     # asyncio.run(save_result_image(file_name, image_with_bytesio(bytesio), origin_result, angle_value))
+    # 计算实际旋转角度
+    anticlosewise = count_the_real_angle_of_anticlockwise(angle_value)
     # 保存识别标注后的图片
-    save_result_image(file_name, image_with_bytesio(bytesio), origin_result, angle_value)
+    save_result_image(file_name, image_with_bytesio(bytesio), origin_result, anticlosewise)
     
     # 角度 < 1 直接返回，不进行旋转
     if abs(angle_value) < 1:
         return final_result(200, file_name, angle_value, False, origin_result, [])
-    # 计算实际旋转角度
-    anticlosewise = count_the_real_angle_of_anticlockwise(angle_value)
+    
     # 旋转图片
     rotated_image = rotate_image(image_with_bytesio(bytesio), anticlosewise)
     # 获取旋转后图片的BytesIO字节串
