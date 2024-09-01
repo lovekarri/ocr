@@ -195,7 +195,8 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 		raise HTTPException(status_code=400, detail="未提供文件")
 	
 	# 为文件生成唯一的文件名
-	filename = f"{hash(file.content_type)}_{file.filename}"
+	# filename = f"{hash(file.content_type)}_{file.filename}"
+	filename = file.filename
 	# 读取文件的二进制数据
 	# Coroutine[Any, Any, bytes]
 	binary_data = await file.read()
