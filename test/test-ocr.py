@@ -8,7 +8,7 @@ def load_json_with_path(file_path: str) -> bytes:
         return f.read()
     
 
-def get_anglevalue_from_json(file_path: str) -> float:
+def get_anglevalue_from_path(file_path: str) -> float:
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -25,8 +25,7 @@ def get_anglevalue_from_json(file_path: str) -> float:
 
 def find_correct_angle(file_path: str) -> float:
 
-    binary_data = load_json_with_path(file_path)
-    result = get_anglevalue_from_json(binary_data)
+    result = get_anglevalue_from_path(file_path)
     # TODO: 从result中获取角度，返回。
     anglevalue = result['result']['anglevalue']
     # print(f'anglevalue = {anglevalue}')
