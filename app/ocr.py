@@ -68,7 +68,9 @@ def save_json_file(file_name: str, result: list) -> None:
     # json_file = json.load(result)
     json_name = os.path.splitext(file_name)[0] + '.json'
     full_path = os.path.join(OCR_JSON_SAVE_DIRECTORY, json_name)
-    with open(full_path, 'wb', encoding='utf-8') as f:
+    if not os.path.exists(full_path):
+        open(full_path, 'a').close()
+    with open(full_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=4)
 
 
