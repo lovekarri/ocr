@@ -1,6 +1,8 @@
 import os
 import io
 import asyncio
+import re
+import subprocess
 
 from fastapi import HTTPException, UploadFile, File
 
@@ -17,8 +19,69 @@ os.makedirs(DETECTION_SAVE_DIRECTORY, exist_ok=True)
 
 
 
-def result_with_bytesio(bytesio: io.BytesIO, file_name: str) -> dict:
+def result_with_binary_data(binary_data: bytes, file_name: str) -> dict:
+    file_path = os.path.join(DETECTION_SAVE_DIRECTORY, file_name)
+    print(f'file_path = {file_path}')
 
+    # 将上传的文件保存到指定目录
+    with open(file_path, "wb") as f:
+        f.write(binary_data)
+
+    img_file = "--image_file=" + file_path
+    infer_file = DETECTION_PATH + "deploy/python/infer.py"
+    # "--model_dir=./output_inference/picodet_lcnet_x2_5_640_mainbody"
+    model_dir = "--model_dir=" + DETECTION_PATH + "output_inference/picodet_lcnet_x2_5_640_mainbody" 
+    command = [
+        "python", 
+        infer_file,
+        model_dir,
+        img_file
+    ]
+
+    # 使用subprocess.run执行命令
+    result = subprocess.run(command, capture_output=True, text=True)
+
+    # 获取命令的标准输出和标准错误
+    stdout = result.stdout
+    stderr = result.stderr
+
+    # 打印输出和错误（可选）
+    print("STDOUT:", stdout)
+    print("STDERR:", stderr)
+
+    pattern = r"class_id:(\d+), confidence:([0-9.]+), left_top:\[([0-9.]+),([0-9.]+)\],right_bottom:\[([0-9.]+),([0-9.]+)\]"
+    # 使用正则表达式查找所有匹配项
+    matches = re.findall(pattern, stdout)
+    # 将匹配项组装成字典列表
+    results = [
+        {
+            "class_id": int(class_id),
+            "confidence": float(confidence),
+            "bounding_box": {
+            "left_top": [float(x), float(y)],
+            "right_bottom": [float(w), float(h)]
+            }
+        }
+        for class_id, confidence, x, y, w, h in matches
+    ]
+
+    # 检查命令是否成功执行
+    if result.returncode == 0:
+        return {
+            "status": 200,
+            "result": {
+                "filename": file_name,
+                "detections": results
+            }
+        }
+    else:
+        return {
+            "status": 0,
+            "result": {
+                "filename": file_name,
+                "error": stderr
+            }
+        }
 
 
 # 获取图片识别结果
