@@ -1235,7 +1235,6 @@ def is_between(v, start, end, include_equal=True):
     True
     >>> is_between(find_correct_angle('/paddle/blood_pressure/blood_pressure_99.png'), 348.29,358.29)
     True
-    ''''''
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_1.png'), 0,5.0)
     True
     >>> is_between(find_correct_angle('/paddle/blood_sugar/blood_sugar_10.png'), 0,7.45)

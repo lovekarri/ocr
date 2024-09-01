@@ -91,7 +91,7 @@ def save_result_image(file_name: str, image: Image, result: list, angle_value=No
 
 # 获取图片ocr结果数据
 # def result_with_binary_data(bytesio: bytes, file_name: str) -> dict:
-def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
+def result_with_bytesio(bytesio: io.BytesIO, file_name: str) -> dict:
     # 初始化BytesIO字节串
     
     # 保存原图
@@ -153,6 +153,6 @@ async def response_data_from_body(file: UploadFile = File(...)) -> dict:
     # bytesio = io.BytesIO(binary_data)
     bytesio = bytesio_with_binary_data(binary_data)
 	# 将二进制数据保存到内存
-    return result_with_binary_data(bytesio, file_name)
+    return result_with_bytesio(bytesio, file_name)
 	
 

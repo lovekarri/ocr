@@ -4,7 +4,7 @@ import io
 import subprocess
 import re
 from utils.ocrresponse import response_data_with_binary_data
-from app.ocr import response_data_from_body, result_with_binary_data
+from app.ocr import response_data_from_body, result_with_bytesio
 
 
 app = FastAPI()
@@ -111,7 +111,8 @@ async def upload_binary_data(file: UploadFile = File(...)):
 		raise HTTPException(status_code=400, detail="未提供文件")
 
 	# 为文件生成唯一的文件名
-	filename = f"{hash(file.content_type)}_{file.filename}"
+	# filename = f"{hash(file.content_type)}_{file.filename}"
+	filename = file.filename
 	print(f'filename = {filename}')
 	print(f'content_type = {file.content_type}')
 
@@ -201,7 +202,7 @@ async def ocr_binary_data(file: UploadFile = File(...)):
 	# Coroutine[Any, Any, bytes]
 	binary_data = await file.read()
 	
-	return result_with_binary_data(io.BytesIO(binary_data), filename)
+	return result_with_bytesio(io.BytesIO(binary_data), filename)
 	
 	# return response_data_from_body(file)
 	
