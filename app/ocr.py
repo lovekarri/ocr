@@ -98,7 +98,9 @@ def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
     origin_result = ocr_image_from_bytesio(bytesio, True, 'ch')
     # 识别结果为空，直接返回
     if len(origin_result) == 0:
-        return final_result(200, file_name, -1, False, [], [])
+        final = final_result(200, file_name, -1, False, [], [])
+        save_json_file(file_name, final)
+        return final
     # 计算最佳旋转角度
     angle_value = closed_angle_of_result(origin_result)
     # 异步保存识别标注后的图片
@@ -110,7 +112,9 @@ def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
     
     # 角度 < 1 直接返回，不进行旋转
     if abs(angle_value) < 1:
-        return final_result(200, file_name, angle_value, False, origin_result, [])
+        final = final_result(200, file_name, angle_value, False, origin_result, [])
+        save_json_file(file_name, final)
+        return final
     
     # 旋转图片
     rotated_image = rotate_image(image_with_bytesio(bytesio), anticlosewise)
