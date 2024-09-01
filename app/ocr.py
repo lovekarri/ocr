@@ -59,12 +59,14 @@ def save_image(file_path: str, image: Image) -> None:
 
 # 保存原图
 def save_original_image(file_name:str, image:Image) -> None:
+    return
     full_path = os.path.join(ORIGINAL_IMAGE_DIRECTORY, file_name)
     save_image(full_path, image)
 
 
 # 异步保存json文件
 def save_json_file(file_name: str, result: list) -> None:
+    return
     # json_file = json.load(result)
     json_name = os.path.splitext(file_name)[0] + '.json'
     full_path = os.path.join(OCR_JSON_SAVE_DIRECTORY, json_name)
@@ -76,6 +78,7 @@ def save_json_file(file_name: str, result: list) -> None:
 
 # 绘制描点后保存图片
 def save_result_image(file_name: str, image: Image, result: list, angle_value=None) -> None:
+    return
     # async def inner():
     #     image_aft_draw = await draw_red_dot_and_label_with_image(image, result, angle_value)
     #     full_path = os.path.join(RESULT_IMAGE_DIRECTORY, file_name)
@@ -107,6 +110,7 @@ def result_with_binary_data(bytesio: io.BytesIO, file_name: str) -> dict:
     # asyncio.run(save_result_image(file_name, image_with_bytesio(bytesio), origin_result, angle_value))
     # 计算实际旋转角度
     anticlosewise = count_the_real_angle_of_anticlockwise(angle_value)
+    
     # 保存识别标注后的图片
     save_result_image(file_name, image_with_bytesio(bytesio), origin_result, anticlosewise)
     
