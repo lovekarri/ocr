@@ -142,7 +142,6 @@ async def upload_binary_data(file: UploadFile = File(...)):
         infer_file,
         model_dir,
         img_file,
-        '--output_dir ./output/valid'
     ]
 
     # 使用subprocess.run执行命令
