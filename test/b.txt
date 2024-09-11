@@ -1,0 +1,230 @@
+'''
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_293.json'), ((778.28, 1299.12), (561.75, 639.02)),((788.28, 1309.12), (571.75, 649.02)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_339.json'), ((473.2, 625.01), (389.51, 460.75)),((483.2, 635.01), (399.51, 470.75)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_6.json'), ((527.48, 443.58), (391.2, 326.96)),((537.48, 453.58), (401.2, 336.96)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_102.json'), ((340.59, 372.71), (364.9, 294.24)),((350.59, 382.71), (374.9, 304.24)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_397.json'), ((364.01, 205.0), (260.98, 281.05)),((374.01, 215.0), (270.98, 291.05)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_378.json'), ((159.45, 57.43), (36.44, 53.67)),((169.45, 67.43), (46.44, 63.67)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_303.json'), ((445.75, 955.97), (394.63, 465.95)),((455.75, 965.97), (404.63, 475.95)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_315.json'), ((578.66, 569.71), (528.81, 659.16)),((588.66, 579.71), (538.81, 669.16)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_342.json'), ((469.99, 852.23), (266.84, 312.26)),((479.99, 862.23), (276.84, 322.26)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_70.json'), ((433.5, 667.5), (872.0, 1048.0)),((443.5, 677.5), (882.0, 1058.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_159.json'), ((540.5, 173.5), (144.0, 202.0)),((550.5, 183.5), (154.0, 212.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_289.json'), ((687.66, 581.25), (729.32, 666.39)),((697.66, 591.25), (739.32, 676.39)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_319.json'), ((500.16, 447.28), (632.85, 674.77)),((510.16, 457.28), (642.85, 684.77)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_318.json'), ((574.12, 738.15), (458.24, 382.34)),((584.12, 748.15), (468.24, 392.34)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_288.json'), ((972.0, 583.5), (700.0, 615.0)),((982.0, 593.5), (710.0, 625.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_322.json'), ((482.26, 985.9), (287.43, 314.07)),((492.26, 995.9), (297.43, 324.07)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_375.json'), ((61.81, 121.94), (69.9, 46.41)),((71.81, 131.94), (79.9, 56.41)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_271.json'), ((540.48, 829.1), (532.15, 451.53)),((550.48, 839.1), (542.15, 461.53)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_334.json'), ((584.9, 1016.64), (544.09, 480.67)),((594.9, 1026.64), (554.09, 490.67)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_343.json'), ((414.68, 424.7), (83.14, 96.61)),((424.68, 434.7), (93.14, 106.61)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_314.json'), ((468.0, 642.0), (633.0, 539.0)),((478.0, 652.0), (643.0, 549.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_30.json'), ((429.94, 390.53), (377.63, 453.92)),((439.94, 400.53), (387.63, 463.92)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_302.json'), ((374.26, 1303.48), (647.5, 554.38)),((384.26, 1313.48), (657.5, 564.38)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_67.json'), ((527.48, 443.58), (391.2, 326.96)),((537.48, 453.58), (401.2, 336.96)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_292.json'), ((386.8, 841.77), (531.09, 475.09)),((396.8, 851.77), (541.09, 485.09)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_338.json'), ((882.59, 1129.99), (489.64, 403.35)),((892.59, 1139.99), (499.64, 413.35)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_276.json'), ((531.1, 352.81), (462.11, 495.04)),((541.1, 362.81), (472.11, 505.04)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_333.json'), ((572.91, 660.43), (420.23, 481.67)),((582.91, 670.43), (430.23, 491.67)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_299.json'), ((360.29, 784.4), (634.81, 539.75)),((370.29, 794.4), (644.81, 549.75)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_149.json'), ((430.42, 678.5), (251.63, 179.13)),((440.42, 688.5), (261.63, 189.13)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_132.json'), ((716.19, 601.5), (532.54, 355.05)),((726.19, 611.5), (542.54, 365.05)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_309.json'), ((482.0, 474.5), (539.0, 636.0)),((492.0, 484.5), (549.0, 646.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_348.json'), ((386.0, 230.0), (277.0, 243.0)),((396.0, 240.0), (287.0, 253.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_295.json'), ((709.96, 815.02), (842.34, 721.55)),((719.96, 825.02), (852.34, 731.55)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_391.json'), ((182.95, 315.78), (332.23, 397.75)),((192.95, 325.78), (342.23, 407.75)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_329.json'), ((420.67, 701.17), (439.23, 390.48)),((430.67, 711.17), (449.23, 400.48)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_283.json'), ((315.09, 421.99), (140.4, 155.97)),((325.09, 431.99), (150.4, 165.97)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_217.json'), ((599.94, 1484.17), (682.99, 916.33)),((609.94, 1494.17), (692.99, 926.33)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_313.json'), ((407.08, 863.73), (789.32, 685.74)),((417.08, 873.73), (799.32, 695.74)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_344.json'), ((637.5, 844.0), (614.0, 717.0)),((647.5, 854.0), (624.0, 727.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_128.json'), ((551.08, 597.59), (465.22, 658.21)),((561.08, 607.59), (475.22, 668.21)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_98.json'), ((44.06, 154.09), (47.14, 42.66)),((54.06, 164.09), (57.14, 52.66)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_129.json'), ((579.62, 574.32), (513.53, 739.67)),((589.62, 584.32), (523.53, 749.67)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_345.json'), ((742.5, 789.5), (778.0, 686.0)),((752.5, 799.5), (788.0, 696.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_312.json'), ((315.35, 368.13), (367.32, 325.2)),((325.35, 378.13), (377.32, 335.2)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_353.json'), ((86.0, 65.0), (101.0, 93.0)),((96.0, 75.0), (111.0, 103.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_144.json'), ((782.26, 681.38), (565.58, 740.73)),((792.26, 691.38), (575.58, 750.73)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_328.json'), ((740.13, 1340.17), (421.39, 489.92)),((750.13, 1350.17), (431.39, 499.92)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_294.json'), ((657.45, 1165.26), (630.22, 532.71)),((667.45, 1175.26), (640.22, 542.71)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_308.json'), ((439.54, 839.49), (579.28, 677.53)),((449.54, 849.49), (589.28, 687.53)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_324.json'), ((348.09, 396.96), (235.22, 203.66)),((358.09, 406.96), (245.22, 213.66)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_41.json'), ((527.48, 443.58), (391.2, 326.96)),((537.48, 453.58), (401.2, 336.96)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_277.json'), ((475.86, 468.8), (935.05, 793.14)),((485.86, 478.8), (945.05, 803.14)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_332.json'), ((500.67, 677.28), (636.26, 555.36)),((510.67, 687.28), (646.26, 565.36)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_298.json'), ((288.19, 157.22), (245.44, 272.56)),((298.19, 167.22), (255.44, 282.56)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_78.json'), ((77.87, 81.49), (91.69, 30.0)),((87.87, 91.49), (101.69, 40.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_97.json'), ((416.0, 748.5), (837.0, 886.0)),((426.0, 758.5), (847.0, 896.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_39.json'), ((332.73, 244.79), (227.5, 181.0)),((342.73, 254.79), (237.5, 191.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_130.json'), ((549.15, 629.38), (460.13, 666.14)),((559.15, 639.38), (470.13, 676.14)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_327.json'), ((634.56, 913.24), (505.21, 597.2)),((644.56, 923.24), (515.21, 607.2)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_15.json'), ((327.39, 591.93), (246.15, 175.56)),((337.39, 601.93), (256.15, 185.56)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_235.json'), ((620.33, 1147.17), (994.24, 509.65)),((630.33, 1157.17), (1004.24, 519.65)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_331.json'), ((561.07, 587.9), (546.99, 490.86)),((571.07, 597.9), (556.99, 500.86)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_274.json'), ((452.77, 535.52), (377.41, 449.86)),((462.77, 545.52), (387.41, 459.86)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_346.json'), ((55.0, 90.5), (58.0, 51.0)),((65.0, 100.5), (68.0, 61.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_311.json'), ((521.5, 134.5), (174.0, 638.0)),((531.5, 144.5), (184.0, 648.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_35.json'), ((156.31, 338.77), (110.31, 94.12)),((166.31, 348.77), (120.31, 104.12)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_307.json'), ((689.86, 860.28), (428.74, 355.7)),((699.86, 870.28), (438.74, 365.7)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_147.json'), ((360.5, 881.0), (211.0, 152.0)),((370.5, 891.0), (221.0, 162.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_281.json'), ((507.24, 806.15), (364.38, 323.76)),((517.24, 816.15), (374.38, 333.76)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_110.json'), ((465.09, 900.51), (239.63, 351.2)),((475.09, 910.51), (249.63, 361.2)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_151.json'), ((545.5, 910.0), (737.0, 514.0)),((555.5, 920.0), (747.0, 524.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_297.json'), ((400.93, 920.65), (445.07, 484.56)),((410.93, 930.65), (455.07, 494.56)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_296.json'), ((568.5, 634.0), (703.0, 632.0)),((578.5, 644.0), (713.0, 642.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_150.json'), ((490.5, 330.0), (94.8, 152.61)),((500.5, 340.0), (104.8, 162.61)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_59.json'), ((364.0, 174.0), (129.0, 101.0)),((374.0, 184.0), (139.0, 111.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_280.json'), ((360.64, 783.92), (634.33, 541.49)),((370.64, 793.92), (644.33, 551.49)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_146.json'), ((529.08, 833.2), (309.34, 221.26)),((539.08, 843.2), (319.34, 231.26)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_351.json'), ((239.37, 532.29), (203.78, 257.36)),((249.37, 542.29), (213.78, 267.36)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_243.json'), ((569.79, 718.34), (571.79, 854.9)),((579.79, 728.34), (581.79, 864.9)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_306.json'), ((514.27, 586.99), (499.48, 570.18)),((524.27, 596.99), (509.48, 580.18)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_34.json'), ((311.1, 334.57), (105.48, 84.7)),((321.1, 344.57), (115.48, 94.7)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_255.json'), ((457.22, 413.28), (540.64, 387.02)),((467.22, 423.28), (550.64, 397.02)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_347.json'), ((530.5, 1010.0), (789.0, 676.0)),((540.5, 1020.0), (799.0, 686.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_330.json'), ((516.37, 674.9), (790.06, 685.85)),((526.37, 684.9), (800.06, 695.85)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_14.json'), ((332.64, 244.62), (234.0, 185.09)),((342.64, 254.62), (244.0, 195.09)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_326.json'), ((446.0, 602.5), (530.0, 483.0)),((456.0, 612.5), (540.0, 493.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_131.json'), ((280.12, 659.92), (402.73, 284.08)),((290.12, 669.92), (412.73, 294.08)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_80.json'), ((457.5, 449.5), (496.0, 452.0)),((467.5, 459.5), (506.0, 462.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_340.json'), ((532.99, 854.16), (221.77, 270.31)),((542.99, 864.16), (231.77, 280.31)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_317.json'), ((436.0, 465.5), (934.0, 875.0)),((446.0, 475.5), (944.0, 885.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_301.json'), ((352.93, 810.2), (578.6, 740.63)),((362.93, 820.2), (588.6, 750.63)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_356.json'), ((339.52, 672.9), (186.23, 236.5)),((349.52, 682.9), (196.23, 246.5)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_4.json'), ((239.37, 532.29), (203.78, 257.36)),((249.37, 542.29), (213.78, 267.36)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_442.json'), ((267.0, 280.0), (191.0, 169.0)),((277.0, 290.0), (201.0, 179.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_291.json'), ((476.57, 1110.06), (644.42, 594.4)),((486.57, 1120.06), (654.42, 604.4)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_321.json'), ((760.68, 879.59), (1031.11, 800.59)),((770.68, 889.59), (1041.11, 810.59)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_376.json'), ((65.48, 39.75), (60.18, 59.87)),((75.48, 49.75), (70.18, 69.87)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_337.json'), ((455.75, 592.09), (485.14, 433.21)),((465.75, 602.09), (495.14, 443.21)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_272.json'), ((613.39, 1112.27), (350.2, 406.91)),((623.39, 1122.27), (360.2, 416.91)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_336.json'), ((823.07, 872.18), (544.13, 529.7)),((833.07, 882.18), (554.13, 539.7)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_9.json'), ((425.9, 451.43), (322.81, 363.58)),((435.9, 461.43), (332.81, 373.58)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_377.json'), ((150.0, 67.0), (55.0, 37.0)),((160.0, 77.0), (65.0, 47.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_232.json'), ((640.99, 521.39), (620.3, 425.66)),((650.99, 531.39), (630.3, 435.66)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_176.json'), ((1225.94, 684.83), (519.17, 744.97)),((1235.94, 694.83), (529.17, 754.97)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_290.json'), ((586.91, 865.99), (357.01, 395.87)),((596.91, 875.99), (367.01, 405.87)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_101.json'), ((443.85, 511.44), (304.54, 299.77)),((453.85, 521.44), (314.54, 309.77)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_5.json'), ((430.61, 587.28), (363.59, 292.22)),((440.61, 597.28), (373.59, 302.22)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_49.json'), ((400.0, 758.0), (867.0, 805.0)),((410.0, 768.0), (877.0, 815.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_286.json'), ((1037.24, 390.91), (565.55, 487.76)),((1047.24, 400.91), (575.55, 497.76)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_300.json'), ((434.5, 918.0), (777.0, 694.0)),((444.5, 928.0), (787.0, 704.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_316.json'), ((459.0, 572.0), (811.0, 705.0)),((469.0, 582.0), (821.0, 715.0)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_480.json'), ((582.4, 1178.46), (388.44, 494.98)),((592.4, 1188.46), (398.44, 504.98)))
+True
+>>> is_between(find_correct_rect('/Users/samguo/Workspace/resources/result_sugar/blood_sugar_341.json'), ((507.5, 671.5), (706.0, 624.0)),((517.5, 681.5), (716.0, 634.0)))
+True
+'''
