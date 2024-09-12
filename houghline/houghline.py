@@ -733,8 +733,9 @@ def mask_of_image(fpath: str='/Users/samguo/Downloads/blood_pressure_127.png'):
     hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
     # 定义亮度范围
-    lower_brightness = np.array([0, 0, 200])  # 例如，亮度大于 50
-    upper_brightness = np.array([180, 255, 255])
+    lower_brightness = np.array([0, 0, 80])  # 例如，亮度大于 50
+    upper_brightness = np.array([50, 100, 140])
+
     mask = cv2.inRange(hsv_image, lower_brightness, upper_brightness)
 
     # 定义饱和度范围

@@ -18,8 +18,8 @@ import numpy as np
 # DEFAULT_PATH = '/Users/samguo/Downloads/houghlines/test1/resources'
 # RESULT_PATH = '/Users/samguo/Downloads/houghlines/test1/result'
 # JSON_PATH = '/Users/samguo/Downloads/houghlines/test1/json'
-DEFAULT_PATH = '/Users/samguo/Workspace/resources/blood_pressure'
-# DEFAULT_PATH = '/Users/samguo/Workspace/resources/blood_sugar'
+# DEFAULT_PATH = '/Users/samguo/Workspace/resources/new_pressure'
+DEFAULT_PATH = '/Users/samguo/Workspace/resources/new_sugar'
 RESULT_PATH = '/Users/samguo/Workspace/resources/result'
 JSON_PATH = '/Users/samguo/Workspace/resources/json'
 
@@ -221,6 +221,23 @@ def high_of_hsv() -> list:
     return color_ranges
 
 
+# 高饱和度、高亮度、高色相区域
+def special_hsv() -> list:
+    light_lower = np.array([0, 0, 80])
+    light_upper = np.array([100, 100, 140])
+    color_lower = np.array([40, 100, 100])
+    color_upper = np.array([90, 255, 255])
+    saturation_lower = np.array([0, 0, 150])
+    saturation_upper = np.array([180, 50, 200])
+
+    color_ranges = [
+        (light_lower, light_upper, 'light'), 
+        # (color_lower, color_upper, 'color'),
+        # (saturation_lower, saturation_upper, 'saturation'),
+                    ]
+    return color_ranges
+
+
 def color_ract_of_image(fpath: str='/Users/samguo/Downloads/blood_pressure_127.png'):
     
     local_file = Path(fpath)
@@ -237,9 +254,10 @@ def color_ract_of_image(fpath: str='/Users/samguo/Downloads/blood_pressure_127.p
     color_ranges = [
         # color_of_hsv(),
         # low_of_hsv(),
-        high_of_hsv(),
+        # high_of_hsv(),
         # low_middle_of_hsv(),
         # middle_high_of_hsv(),
+        special_hsv()
     ]
 
     for ranges in color_ranges:
