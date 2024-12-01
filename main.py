@@ -1,4 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException, Body
+from pydantic import BaseModel
+from typing import Optional
 import os
 import io
 import subprocess
@@ -9,6 +11,9 @@ from app.detection import result_with_binary_data
 
 
 app = FastAPI()
+
+class Item(BaseModel):
+    url: Optional[str] = None
 
 # 指定文件保存的目录
 DETECTION_SAVE_DIRECTORY = "/paddle/images/detection"
@@ -326,6 +331,32 @@ async def ocr_binary_data(file: UploadFile = File(...)):
     # # 如果识别效果很差，则将其旋转180°后应该方向正确
     # # 此时关闭文字方向识别器再次识别文字，识别结果与第一次相近或者更好
     # return final_result
+
+
+@app.post("/ocr/")
+async def read_item(item: Item):
+    if item.url is None:
+        raise HTTPException(status_code=400, detail="URL is required")
+    absolute_path = '/56T'
+    # 检查 URL 是否以 https://file.j1.sale 开头
+    if item.url.startswith('https://file.j1.sale'):
+        # 提取路径部分
+        relative_path = item.url.split('https://file.j1.sale')[1]
+    elif item.url.startswith('/'):
+        # 处理以 / 开头的相对路径
+        relative_path = item.url
+        relative_path = relative_path.lstrip('/')   # 去掉开头的斜杠
+    else:
+        # 处理其他格式的 URL
+        relative_path = item.url
+
+    full_path = os.path.join(absolute_path, relative_path)
+    filename = os.path.basename(full_path)
+
+    with open(full_path, 'rb') as file:
+        file_content = file.read()
+    
+    return result_with_bytesio(io.BytesIO(file_content), filename)
 
 
 # 设置Uvicorn服务器的运行
