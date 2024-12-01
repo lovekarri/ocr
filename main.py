@@ -350,13 +350,17 @@ async def read_item(item: Item):
         # 处理其他格式的 URL
         relative_path = item.url
 
+    print(absolute_path)
+    print(relative_path)
     full_path = os.path.join(absolute_path, relative_path)
-    filename = os.path.basename(full_path)
+    print(full_path)
+    file_name = os.path.basename(full_path)
+    print(file_name)
 
     with open(full_path, 'rb') as file:
         file_content = file.read()
     
-    return result_with_bytesio(io.BytesIO(file_content), filename)
+    return result_with_bytesio(io.BytesIO(file_content), file_name)
 
 
 # 设置Uvicorn服务器的运行
