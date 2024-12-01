@@ -342,6 +342,7 @@ async def read_item(item: Item):
     if item.url.startswith('https://file.j1.sale'):
         # 提取路径部分
         relative_path = item.url.split('https://file.j1.sale')[1]
+        relative_path = relative_path.lstrip('/')   # 去掉开头的斜杠
     elif item.url.startswith('/'):
         # 处理以 / 开头的相对路径
         relative_path = item.url
